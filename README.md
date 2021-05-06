@@ -1,24 +1,83 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false, unique: true |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :articles
+- has_many :comments
+- has_many :likes
+- has_many :talks
+- has_many :responses
 
-* Configuration
+## articlesテーブル
 
-* Database creation
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| text        | text       | null: false                    |
+| category_id | integer    | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many   :comments
+- has_many   :likes
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
 
-* Deployment instructions
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| text    | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| article | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :article
+
+## likesテーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| article | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
+
+## talksテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| title  | string     | null: false                    |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many   :responses
+
+## responsesテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| talk   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :talk
