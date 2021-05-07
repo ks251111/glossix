@@ -10,6 +10,28 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav_left">
+            <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
+          </div>
+          <%# ログイン状態 %>
+          <% if user_signed_in? %>
+            <div class="nav_right">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
+              <%= link_to current_user.nickname, "#" %>
+            </div>
+          <%# ログアウト状態 %>
+          <% else %>
+            <div class="nav_right">
+              <%= link_to "新規登録", new_user_registration_path %>
+              <%= link_to "ログイン", new_user_session_path %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
