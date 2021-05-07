@@ -1,0 +1,23 @@
+/* ページ全体 */
+
+*{
+  box-sizing: border-box; 
+ }
+ 
+a{
+  color: black;
+  text-decoration: none;
+}
+
+/* ヘッダー */
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo{
+  width: 200px;
+}
