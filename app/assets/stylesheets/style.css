@@ -1,3 +1,19 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
 /* ページ全体 */
 
 *{
@@ -20,4 +36,16 @@ a{
 
 .logo{
   width: 200px;
+}
+
+/* フッター */
+
+.footer{
+  background-color: lightgray;
+  padding: 10px 0;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 10px;
 }
