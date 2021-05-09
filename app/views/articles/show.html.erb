@@ -1,0 +1,19 @@
+<div class="article-show-contents">
+  <div class="article-title">
+    <%= @article.title %>
+  </div>
+  <div class="article-image">
+    <%= image_tag @article.image, class: "article-show-img" %>
+  </div>
+  <div class="article-name">
+    <%= "＠#{@article.user.nickname}" %>
+  </div>
+  <div class="article-text">
+    <%= @article.text %>
+  </div>
+
+  <% if user_signed_in? && current_user.id == @article.user_id %>
+    <%= link_to "編集", "#" %>
+    <%= link_to "削除", "#" %>
+  <% end %>
+</div>
