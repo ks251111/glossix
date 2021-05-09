@@ -1,23 +1,58 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
 /* ページ全体 */
 
-*{
+* {
   box-sizing: border-box; 
  }
  
-a{
+a {
   color: black;
   text-decoration: none;
 }
 
 /* ヘッダー */
 
-.header{
+.header {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.logo{
+.logo {
   width: 200px;
+}
+
+/* フッター */
+
+.footer {
+  background-color: lightgray;
+  padding: 10px 0;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 10px;
+}
+
+/* 記事一覧 */
+
+.article-img {
+  height: 100px;
+  width: 100px;
 }
