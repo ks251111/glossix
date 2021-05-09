@@ -13,7 +13,7 @@
   </div>
 
   <% if user_signed_in? && current_user.id == @article.user_id %>
-    <%= link_to "編集", edit_article_path %>
-    <%= link_to "削除", "#" %>
+    <%= link_to "編集", edit_article_path(@article.id) %>
+    <%= link_to "削除", article_path(@article.id), method: :delete %>
   <% end %>
 </div>
