@@ -7,7 +7,7 @@
   <ul>
     <% @articles.each do |article| %>
     <li>
-      <%= link_to "#" do %>
+      <%= link_to article_path(article.id) do %>
 
         <div class="article-image">
           <%= image_tag article.image, class: "article-img" %>
