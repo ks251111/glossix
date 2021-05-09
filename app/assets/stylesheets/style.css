@@ -16,36 +16,43 @@ ul,li {
 
 /* ページ全体 */
 
-*{
+* {
   box-sizing: border-box; 
  }
  
-a{
+a {
   color: black;
   text-decoration: none;
 }
 
 /* ヘッダー */
 
-.header{
+.header {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.logo{
+.logo {
   width: 200px;
 }
 
 /* フッター */
 
-.footer{
+.footer {
   background-color: lightgray;
   padding: 10px 0;
 }
 
-.copyright{
+.copyright {
   text-align: center;
   font-size: 10px;
+}
+
+/* 記事一覧 */
+
+.article-img {
+  height: 100px;
+  width: 100px;
 }
