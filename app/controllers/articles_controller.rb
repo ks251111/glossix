@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
   def index
     @articles = Article.order('created_at DESC')
   end
@@ -18,15 +20,12 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     @article.update(article_params)
     if @article.save
       redirect_to article_path
@@ -35,9 +34,18 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article.destroy
+    redirect_to root_path
+  end
+
   private
 
   def article_params
     params.require(:article).permit(:title, :text, :image).merge(user_id: current_user.id)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 end
