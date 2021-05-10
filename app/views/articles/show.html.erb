@@ -16,4 +16,15 @@
     <%= link_to "編集", edit_article_path(@article.id) %>
     <%= link_to "削除", article_path(@article.id), method: :delete %>
   <% end %>
+
+  <div class="comment">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@article, @comment], local: true) do |f| %>
+        <%= f.text_area :text, placeholder: "コメントする" %>
+        <%= f.submit "コメント" %>
+      <% end %>
+    <% else %>
+      <strong><p>***コメントの投稿には新規登録/ログインが必要です***</p></strong>
+    <% end %>
+    </div>
 </div>
