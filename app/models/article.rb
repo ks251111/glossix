@@ -1,8 +1,9 @@
 class Article < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
-  belongs_to :category
   has_one_attached :image
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
 
   with_options presence: true do
     validates :title
