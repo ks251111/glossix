@@ -6,7 +6,7 @@
     <%= image_tag @article.image, class: "article-show-img" %>
   </div>
   <div class="article-name">
-    <%= "＠#{@article.user.nickname}" %>
+    <%= link_to "＠#{@article.user.nickname}", user_path(@article.user) %>
   </div>
   <div class="article-text">
     <%= @article.text %>
@@ -31,7 +31,7 @@
     <h4>コメント一覧</h4>
     <% @comments.each do |comment| %>
      <p>
-       <strong><%= comment.user.nickname %></strong>
+       <strong><%= link_to "#{comment.user.nickname}", user_path(comment.user) %></strong>
        <%= comment.text %>
      </p>
      <% end %>

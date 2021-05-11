@@ -1,0 +1,8 @@
+<div class="contents">
+  <p><%= @user.nickname %>さんの記事一覧</p>
+  <div class="article-contents">
+    <% @user.articles.each do |article| %>
+    <%= render partial: "layouts/article", locals: { article: article } %>
+    <% end %>
+  </div>
+</div>
