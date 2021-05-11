@@ -4,23 +4,7 @@
 <%# 記事一覧 %>
 <h3>新着記事</h3>
 <div class="article-contents">
-  <ul>
-    <% @articles.each do |article| %>
-    <li>
-      <%= link_to article_path(article.id) do %>
-
-        <div class="article-image">
-          <%= image_tag article.image, class: "article-img" %>
-        </div>
-
-        <div class="article-title">
-          <%= article.title %>
-        </div>
-        <div class="article-name">
-          <%= "＠#{article.user.nickname}" %>
-        </div>
-
-      <% end %>
-    <% end %>
-  </ul>
+  <% @articles.each do |article| %>
+    <%= render partial: "layouts/article", locals: { article: article } %>
+  <% end %>
 </div>

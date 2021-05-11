@@ -1,24 +1,8 @@
 <div class="contents">
   <p><%= @user.nickname %>さんの記事一覧</p>
   <div class="article-contents">
-  <ul>
     <% @user.articles.each do |article| %>
-    <li>
-      <%= link_to article_path(article.id) do %>
-
-        <div class="article-image">
-          <%= image_tag article.image, class: "article-img" %>
-        </div>
-
-        <div class="article-title">
-          <%= article.title %>
-        </div>
-        <div class="article-name">
-          <%= "＠#{article.user.nickname}" %>
-        </div>
-
-      <% end %>
+    <%= render partial: "layouts/article", locals: { article: article } %>
     <% end %>
-  </ul>
-</div>
+  </div>
 </div>
