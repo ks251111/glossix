@@ -14,9 +14,9 @@
 
   <div class="favorite">
     <% if current_user.liked_by?(@article) %>
-    <%= link_to "いいね解除", article_like_path(@article), method: :delete %>
+    <%= link_to "いいね解除", article_like_path(@article), method: :delete %> <%= @article.likes.count %>
     <% else %>
-    <%= link_to "いいね", article_likes_path(@article), method: :post %>
+    <%= link_to "いいね", article_likes_path(@article), method: :post %> <%= @article.likes.count %>
     <% end %>
   </div>
 
