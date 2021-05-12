@@ -1,8 +1,27 @@
 <div class="contents">
-  <p><%= @user.nickname %>さんの記事一覧</p>
+  <h3><%= @user.nickname %>さんの記事一覧</h3>
   <div class="article-contents">
     <% @user.articles.each do |article| %>
     <%= render partial: "layouts/article", locals: { article: article } %>
+    <% end %>
+  </div>
+  <h3><%= @user.nickname %>さんのいいねした記事一覧</h3>
+  <div class="article-contents">
+    <% @user.likes.each do |like| %>
+      <div class="article-list">
+        <%= link_to article_path(like.article.id) do %>
+          <div class="article-image">
+            <%= image_tag like.article.image, class: "article-img" %>
+          </div>
+
+          <div class="article-title">
+            <%= like.article.title %>
+          </div>
+          <div class="article-name">
+            <%= "＠#{like.article.user.nickname}" %>
+          </div>
+        <% end %>
+      </div>    
     <% end %>
   </div>
 </div>

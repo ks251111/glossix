@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    @like = Like.new
   end
 
   def edit
