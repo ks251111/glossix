@@ -12,6 +12,14 @@
     <%= @article.text %>
   </div>
 
+  <div class="favorite">
+    <% if current_user.liked_by?(@article) %>
+    <p>いいね解除</p>
+    <% else %>
+    <p>いいね</p>
+    <% end %>
+  </div>
+
   <% if user_signed_in? && current_user.id == @article.user_id %>
     <%= link_to "編集", edit_article_path(@article.id) %>
     <%= link_to "削除", article_path(@article.id), method: :delete %>
@@ -31,7 +39,7 @@
     <h4>コメント一覧</h4>
     <% @comments.each do |comment| %>
      <p>
-       <strong><%= link_to "#{comment.user.nickname}", user_path(comment.user) %></strong>
+       <strong><%= link_to comment.user.nickname, user_path(comment.user) %></strong>
        <%= comment.text %>
      </p>
      <% end %>
