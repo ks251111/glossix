@@ -21,6 +21,8 @@ class TalksController < ApplicationController
   end
 
   def show
+    @response = Response.new
+    @responses = @talk.responses.includes(:user)
   end
 
   def edit
