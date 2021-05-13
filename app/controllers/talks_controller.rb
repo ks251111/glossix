@@ -1,4 +1,5 @@
 class TalksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_talk, only: [:show, :edit, :update, :destroy]
   def index
     @talks = Talk.order("created_at DESC")
