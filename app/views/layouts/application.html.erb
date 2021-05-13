@@ -11,21 +11,28 @@
 
   <body>
     <header class="header">
+      <div class="top-header">
+        <div class="nav_left">
+          <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
+        </div>
 
-      <div class="nav_left">
-        <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
+        <div class="nav_right">
+          <%# ログイン状態 %>
+          <% if user_signed_in? %>
+            <%= link_to "#{current_user.nickname}", user_path(current_user) %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
+          <%# ログアウト状態 %>
+          <% else %>
+            <%= link_to "新規登録", new_user_registration_path %>
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </div>
       </div>
 
-      <div class="nav_right">
-        <%# ログイン状態 %>
-        <% if user_signed_in? %>
-          <%= link_to "#{current_user.nickname}", user_path(current_user) %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
-        <%# ログアウト状態 %>
-        <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
-        <% end %>
+      <div class="bottom-header">
+        <div class="nav_links">
+          <%= link_to "Q＆A", talks_path %>
+        </div>
       </div>
 
     </header>

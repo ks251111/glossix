@@ -27,7 +27,7 @@ a {
 
 /* ヘッダー */
 
-.header {
+.top-header {
   width: 100%;
   display: flex;
   justify-content: space-around;
