@@ -14,7 +14,7 @@
   </div>
 
   <% if user_signed_in? && current_user.id == @talk.user_id %>
-    <%= link_to "編集", "#" %>
+    <%= link_to "編集", edit_talk_path(@talk.id) %>
     <%= link_to "削除", "#" %>
   <% end %>
 </div>
