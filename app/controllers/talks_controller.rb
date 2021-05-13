@@ -1,6 +1,8 @@
 class TalksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_talk, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
+
   def index
     @talks = Talk.order("created_at DESC")
   end
@@ -46,5 +48,9 @@ class TalksController < ApplicationController
 
   def set_talk
     @talk = Talk.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless current_user.id == @talk.user_id
   end
 end
