@@ -4,7 +4,7 @@ class ResponsesController < ApplicationController
     if @response.save
       redirect_to talk_path(@response.talk)
     else
-      @talk = @comment.talk
+      @talk = @response.talk
       @responses = @talk.responses
       render "talks/show"
     end
