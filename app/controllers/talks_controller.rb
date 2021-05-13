@@ -1,6 +1,6 @@
 class TalksController < ApplicationController
   def index
-    @talks = Talk.all
+    @talks = Talk.order("created_at DESC")
   end
 
   def new
