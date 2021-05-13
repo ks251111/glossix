@@ -16,6 +16,13 @@
           <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
         </div>
 
+        <div class="search-form">
+          <%= form_with(url: search_articles_path, local: true, method: :get) do |f| %>
+            <%= f.text_field :keyword, placeholder: "検索" %>
+            <%= f.submit "検索" %>
+          <% end %>
+        </div>
+
         <div class="nav_right">
           <%# ログイン状態 %>
           <% if user_signed_in? %>

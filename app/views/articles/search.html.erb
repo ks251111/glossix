@@ -1,0 +1,5 @@
+<div class="article-contents-search">
+  <% @articles.each do |article| %>
+    <%= render partial: "layouts/article", locals: { article: article } %>
+  <% end %>
+</div>
