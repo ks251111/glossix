@@ -9,6 +9,11 @@ class TalksController < ApplicationController
 
   def create
     @talk = Talk.new(talk_params)
+    if @talk.save
+      redirect_to talks_path
+    else
+      render :new
+    end
   end
 
   private
