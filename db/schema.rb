@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_024224) do
+ActiveRecord::Schema.define(version: 2021_05_13_102758) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 2021_05_13_024224) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "responses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "talk_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["talk_id"], name: "index_responses_on_talk_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
+  end
+
   create_table "talks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "text", null: false
@@ -90,5 +100,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_024224) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "users"
+  add_foreign_key "responses", "talks"
+  add_foreign_key "responses", "users"
   add_foreign_key "talks", "users"
 end
