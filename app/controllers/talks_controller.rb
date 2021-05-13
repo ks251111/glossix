@@ -24,6 +24,16 @@ class TalksController < ApplicationController
     @talk = Talk.find(params[:id])
   end
 
+  def update
+    @talk = Talk.find(params[:id])
+    @talk.update(talk_params)
+    if @talk.save
+      redirect_to talk_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def talk_params
