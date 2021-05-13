@@ -1,0 +1,20 @@
+<div class="talk-show-contents">
+  <%= link_to "Q＆Aトップへ戻る", talks_path %>
+  <div class="talk-title">
+    <%= @talk.title %>
+  </div>
+  <div class="talk-image">
+    <%= image_tag @talk.image, class: "talk-show-img" if @talk.image.attached? %>
+  </div>
+  <div class="talk-name">
+    <%= link_to "＠#{@talk.user.nickname}", user_path(@talk.user) %>
+  </div>
+  <div class="talk-text">
+    <%= @talk.text %>
+  </div>
+
+  <% if user_signed_in? && current_user.id == @talk.user_id %>
+    <%= link_to "編集", "#" %>
+    <%= link_to "削除", "#" %>
+  <% end %>
+</div>
