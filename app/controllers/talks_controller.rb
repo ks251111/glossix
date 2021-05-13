@@ -1,4 +1,5 @@
 class TalksController < ApplicationController
+  before_action :set_talk, only: [:show, :edit, :update, :destroy]
   def index
     @talks = Talk.order("created_at DESC")
   end
@@ -17,15 +18,12 @@ class TalksController < ApplicationController
   end
 
   def show
-    @talk = Talk.find(params[:id])
   end
 
   def edit
-    @talk = Talk.find(params[:id])
   end
 
   def update
-    @talk = Talk.find(params[:id])
     @talk.update(talk_params)
     if @talk.save
       redirect_to talk_path
@@ -34,9 +32,18 @@ class TalksController < ApplicationController
     end
   end
 
+  def destroy
+    @talk.destroy
+    redirect_to talks_path
+  end
+
   private
 
   def talk_params
     params.require(:talk).permit(:title, :text, :image).merge(user_id: current_user.id)
+  end
+
+  def set_talk
+    @talk = Talk.find(params[:id])
   end
 end
