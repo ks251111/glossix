@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>新規投稿</h3>
+  <%= form_with(model: @talk, local: true) do |f| %>
+
+  <%= render 'layouts/error_messages', model: f.object %>
+
+    <div class="field">
+      <%= f.label :title, "タイトル" %><br />
+      <%= f.text_field :title, placeholder:"タイトル" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :text, "本文" %><br />
+      <%= f.text_area :text, placeholder:"本文" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image, "画像" %><br />
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="send">
+      <%= f.submit "投稿する" %>
+    </div>
+  <% end %>
+</div>
