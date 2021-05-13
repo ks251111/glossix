@@ -5,6 +5,6 @@
 <h4>スレッド一覧</h4>
 <div class="talk-list">
   <% @talks.each do |talk| %>
-    <%= link_to talk.title, "#" %>
+    <%= link_to talk.title, talk_path(talk.id) %>
   <% end %>
 </div>
