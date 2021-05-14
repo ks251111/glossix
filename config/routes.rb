@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :talks do
     resources :responses, only: :create
   end
+  resources :categories, only: :show
 end
