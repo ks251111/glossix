@@ -37,9 +37,18 @@
       </div>
 
       <div class="bottom-header">
-        <div class="nav_links">
-          <%= link_to "Q＆A", talks_path %>
-        </div>
+        <ul class="nav_links">
+          <li id="lists">カテゴリー</li>
+          <li><%= link_to "Q＆A", talks_path %></li>
+        </ul>
+        <ul class="category-lists hidden" id="pull-down">
+          <li><%= link_to "メイク", "/categories/2" %></li>
+          <li><%= link_to "スキンケア", "/categories/3" %></li>
+          <li><%= link_to "ボディケア", "/categories/4" %></li>
+          <li><%= link_to "ヘアケア・スタイリング", "/categories/5" %></li>
+          <li><%= link_to "ネイル", "/categories/6" %></li>
+          <li><%= link_to "その他", "/categories/7" %></li>
+        </ul>
       </div>
 
     </header>

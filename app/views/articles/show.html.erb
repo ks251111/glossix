@@ -11,6 +11,9 @@
   <div class="article-text">
     <%= @article.text %>
   </div>
+  <div class="article-category">
+    <%= link_to "カテゴリー：#{@article.category.name}", category_path(@article.category) %>
+  </div>
 
   <div class="favorite">
     <% if user_signed_in? %>
