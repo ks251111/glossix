@@ -1,0 +1,6 @@
+<h3><%= @article.category.name %></h3>
+<div class="article-contents">
+  <% @articles.each do |article| %>
+    <%= render partial: "layouts/article", locals: { article: article } %>
+  <% end %>
+</div>
