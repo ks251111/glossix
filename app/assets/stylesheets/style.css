@@ -38,6 +38,23 @@ a {
   width: 200px;
 }
 
+.nav_links {
+  display: flex;
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.category-lists {
+  list-style: none;
+  background-color: white;
+  position: absolute;
+  left: 50px;
+  border: 1px solid black;
+}
+
 /* フッター */
 
 .footer {
