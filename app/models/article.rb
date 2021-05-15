@@ -10,7 +10,6 @@ class Article < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :text
-    validates :image
   end
 
   validates :category_id, numericality: { other_than: 1 }
