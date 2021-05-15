@@ -1,7 +1,11 @@
 <div class="article-list">
   <%= link_to article_path(article.id) do %>
     <div class="article-image">
+    <% if article.image.present? %>
       <%= image_tag article.image, class: "article-img" %>
+    <% else %>
+      <%= image_tag "noimage.jpg", class: "article-img" %>
+    <% end %>
     </div>
 
     <div class="article-title">
