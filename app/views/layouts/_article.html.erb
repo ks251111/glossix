@@ -1,8 +1,10 @@
 <div class="article-list">
   <%= link_to article_path(article.id) do %>
     <div class="article-image">
-    <% if article.image.present? %>
-      <%= image_tag article.image, class: "article-img" %>
+    <% if article.images.present? %>
+      <% article.images.each do |image| %>
+        <%= image_tag image, class: "article-img" %>
+      <% end %>
     <% else %>
       <%= image_tag "noimage.jpg", class: "article-img" %>
     <% end %>
