@@ -18,9 +18,13 @@
 
     <div class="field">
       <%= f.label :image, "画像" %><br />
-      <%= f.file_field :image %>
+      <%= f.file_field :images, name: 'article[images][]', id: 'article_image' %>
       <div id="image-list"></div>
     </div>
+
+    <% @article.images.each do |image| %>
+      <%= image_tag image, class: 'images' %>
+    <% end %>
 
     <div class="send">
       <%= f.submit "投稿する" %>
