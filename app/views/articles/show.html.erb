@@ -3,7 +3,11 @@
     <%= @article.title %>
   </div>
   <div class="article-image">
-    <%= image_tag @article.image, class: "article-show-img" if @article.image.attached? %>
+    <% if @article.images.present? %>
+      <% @article.images.each do |image| %>
+        <%= image_tag image, class: "article-show-img" %>
+      <% end %>
+    <% end %>
   </div>
   <div class="article-name">
     <%= link_to "＠#{@article.user.nickname}", user_path(@article.user) %>
