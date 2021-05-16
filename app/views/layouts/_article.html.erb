@@ -2,7 +2,7 @@
   <%= link_to article_path(article.id) do %>
     <div class="article-image">
     <% if article.images.present? %>
-      <% article.images.each do |image| %>
+      <% article.images.first(1).each do |image| %>
         <%= image_tag image, class: "article-img" %>
       <% end %>
     <% else %>
