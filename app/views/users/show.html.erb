@@ -1,4 +1,12 @@
 <div class="contents">
+  <h3><%= @user.nickname %>さんのプロフィール</h3>
+  <div class="profile">
+    <% if @user.image.present? %>
+      <%= image_tag @user.image, class: "user-icon" %>
+    <% else %>
+      <%= image_tag "noimage.jpg", class: "user-icon" %>
+    <% end %>
+  </div>
   <h3><%= @user.nickname %>さんの記事一覧</h3>
   <div class="article-contents">
     <% @user.articles.each do |article| %>
