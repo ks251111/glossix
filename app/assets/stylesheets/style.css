@@ -93,3 +93,10 @@ a {
   width: 300px;
   object-fit: contain;
 }
+
+/* ユーザー詳細ページ */
+.user-icon {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+}

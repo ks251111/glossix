@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :talks
   has_many :responses
+  has_one_attached :image
   
   validates :nickname, presence: true
 
