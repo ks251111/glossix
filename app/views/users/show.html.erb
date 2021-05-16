@@ -6,6 +6,11 @@
     <% else %>
       <%= image_tag "noimage.jpg", class: "user-icon" %>
     <% end %>
+
+    <% if current_user.id == @user.id %>
+      <%= link_to "登録情報の編集", edit_user_registration_path(@user.id) %>
+    <% end %>
+
   </div>
   <h3><%= @user.nickname %>さんの記事一覧</h3>
   <div class="article-contents">
