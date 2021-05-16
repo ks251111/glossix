@@ -81,8 +81,15 @@ a {
   object-fit: contain;
 }
 
+/* 投稿フォーム */
 .preview-img {
   height: 100px;
   width: 100px;
+  object-fit: contain;
+}
+
+.images {
+  height: 300px;
+  width: 300px;
   object-fit: contain;
 }
