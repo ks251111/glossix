@@ -33,7 +33,7 @@ RSpec.describe "記事投稿", type: :system do
       # トップページへ遷移することを確認する
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容の記事が存在することを確認する(画像)
-      
+      expect(page).to have_selector('img')
       # トップページには先ほど投稿した内容の記事が存在することを確認する(タイトル)
       expect(page).to have_content(@article_title)
     end
@@ -48,5 +48,45 @@ RSpec.describe "記事投稿", type: :system do
       # ログインページへ遷移したことを確認する
       expect(current_path).to eq(new_user_session_path)
     end
+  end
+end
+
+RSpec.describe '投稿詳細', type: :system do
+  before do
+    @article = FactoryBot.create(:article)
+  end
+
+  it 'ログインしたユーザーは記事詳細ページに遷移してコメント投稿欄が表示される' do
+    # ログインする
+    visit new_user_session_path
+    fill_in 'メールアドレス', with: @article.user.email
+    fill_in 'パスワード', with: @article.user.password
+    click_button "ログイン"
+    # 記事の詳細ページに遷移する
+    visit article_path(@article)
+    # 詳細ページに記事の内容が含まれている
+    expect(page).to have_selector('img')
+    expect(page).to have_content("#{@article.title}")
+    expect(page).to have_content("#{@article.text}")
+    expect(page).to have_content("#{@article.category.name}")
+    expect(page).to have_selector("div.favorite")
+    # コメント用のフォームが存在する
+    expect(page).to have_selector 'form'
+
+  end
+
+  it 'ログインしていない状態で記事詳細ページに遷移できるもののコメント投稿欄が表示されない' do
+    # トップページに移動する
+    visit root_path
+    # 記事の詳細ページに遷移する
+    visit article_path(@article)
+    # 詳細ページに記事の内容が含まれている
+    expect(page).to have_selector('img')
+    expect(page).to have_content("#{@article.title}")
+    expect(page).to have_content("#{@article.text}")
+    expect(page).to have_content("#{@article.category.name}")
+    expect(page).to have_selector("div.favorite")
+    # 「コメントの投稿には新規登録/ログインが必要です」が表示されていることを確認する
+    expect(page).to have_content 'コメントの投稿には新規登録/ログインが必要です'
   end
 end
