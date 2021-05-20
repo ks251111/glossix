@@ -178,3 +178,62 @@ RSpec.describe '記事編集', type: :system do
     end
   end
 end
+
+RSpec.describe '記事削除', type: :system do
+  before do
+    @article1 = FactoryBot.create(:article)
+    @article2 = FactoryBot.create(:article)
+  end
+
+  context '記事削除ができるとき' do
+    it 'ログインしたユーザーは自らが投稿した記事の削除ができる' do
+      # article1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'メールアドレス', with: @article1.user.email
+      fill_in 'パスワード', with: @article1.user.password
+      click_button "ログイン"
+      expect(current_path).to eq(root_path)      
+      # article1の詳細ページへ遷移する
+      visit article_path(@article1)
+      # article1の詳細ページに「削除」へのリンクがあることを確認する
+      expect(page).to have_link '削除', href: article_path(@article1)
+      # 投稿を削除するとレコードの数が1減ることを確認する
+      expect {
+        find_link('削除', href: article_path(@article1)).click
+      }.to change { Article.count }.by(-1)
+      # トップページに遷移したことを確認する
+      expect(current_path).to eq(root_path)
+      # トップページにはarticle1の内容が存在しないことを確認する(タイトル)
+      expect(page).to have_no_content("#{@article1.title}")
+    end
+  end
+
+  context '記事削除ができないとき' do
+    it 'ログインしたユーザーは自分以外が投稿した記事の削除ができない' do
+      # article1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'メールアドレス', with: @article1.user.email
+      fill_in 'パスワード', with: @article1.user.password
+      click_button "ログイン"
+      expect(current_path).to eq(root_path)   
+      # article2の詳細ページへ遷移する
+      visit article_path(@article2)
+      # article2の詳細ページに「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link '削除', href: article_path(@article2)
+    end
+    it 'ログインしていないと記事の削除ボタンが表示されない' do
+      # トップページに移動する
+      visit root_path
+      # article1の詳細ページへ遷移する
+      visit article_path(@article1)
+      # article1の詳細ページに「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link '削除', href: article_path(@article1)
+      # トップページに移動する
+      visit root_path
+      # article2の詳細ページへ遷移する
+      visit article_path(@article2)
+      # article2の詳細ページに「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link '削除', href: article_path(@article2)
+    end
+  end
+end
