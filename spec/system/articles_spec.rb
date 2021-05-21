@@ -11,11 +11,7 @@ RSpec.describe "記事投稿", type: :system do
   context '記事投稿ができるとき' do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @user.email
-      fill_in 'パスワード', with: @user.password
-      click_button "ログイン"
-      expect(current_path).to eq(root_path)
+      sign_in(@user)
       # 新規投稿ページへのボタンがあることを確認する
       expect(page).to have_content('記事を投稿する')
       # 投稿ページに移動する
@@ -60,11 +56,7 @@ RSpec.describe '投稿詳細', type: :system do
 
   it 'ログインしたユーザーは記事詳細ページに遷移してコメント投稿欄が表示される' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'メールアドレス', with: @article.user.email
-    fill_in 'パスワード', with: @article.user.password
-    click_button "ログイン"
-    expect(current_path).to eq(root_path)
+    sign_in(@article.user)
     # 記事の詳細ページに遷移する
     visit article_path(@article)
     # 詳細ページに記事の内容が含まれている
@@ -103,11 +95,7 @@ RSpec.describe '記事編集', type: :system do
   context '記事編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿した記事の編集ができる' do
       # article1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @article1.user.email
-      fill_in 'パスワード', with: @article1.user.password
-      click_button "ログイン"
-      expect(current_path).to eq(root_path)
+      sign_in(@article1.user)
       # article1の詳細ページへ遷移する
       visit article_path(@article1)
       # article1に「編集」へのリンクがあることを確認する
@@ -152,11 +140,7 @@ RSpec.describe '記事編集', type: :system do
   context '記事編集ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿した記事の編集画面には遷移できない' do
       # article1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @article1.user.email
-      fill_in 'パスワード', with: @article1.user.password
-      click_button "ログイン"
-      expect(current_path).to eq(root_path)
+      sign_in(@article1.user)
       # article2の詳細ページへ遷移する
       visit article_path(@article2)
       # article2に「編集」へのリンクがないことを確認する
@@ -188,11 +172,7 @@ RSpec.describe '記事削除', type: :system do
   context '記事削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿した記事の削除ができる' do
       # article1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @article1.user.email
-      fill_in 'パスワード', with: @article1.user.password
-      click_button "ログイン"
-      expect(current_path).to eq(root_path)      
+      sign_in(@article1.user)    
       # article1の詳細ページへ遷移する
       visit article_path(@article1)
       # article1の詳細ページに「削除」へのリンクがあることを確認する
@@ -211,11 +191,7 @@ RSpec.describe '記事削除', type: :system do
   context '記事削除ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿した記事の削除ができない' do
       # article1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @article1.user.email
-      fill_in 'パスワード', with: @article1.user.password
-      click_button "ログイン"
-      expect(current_path).to eq(root_path)   
+      sign_in(@article1.user)
       # article2の詳細ページへ遷移する
       visit article_path(@article2)
       # article2の詳細ページに「削除」へのリンクがないことを確認する

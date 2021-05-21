@@ -8,11 +8,7 @@ RSpec.describe "コメント投稿", type: :system do
 
   it 'ログインしたユーザーは記事詳細ページでコメント投稿できる' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'メールアドレス', with: @article.user.email
-    fill_in 'パスワード', with: @article.user.password
-    click_button "ログイン"
-    expect(current_path).to eq(root_path)
+    sign_in(@article.user)
     # 記事詳細ページに遷移する
     visit article_path(@article)
     # フォームに情報を入力する
