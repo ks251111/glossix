@@ -97,3 +97,64 @@ RSpec.describe 'ログイン', type: :system do
     end
   end
 end
+
+RSpec.describe 'ユーザー情報編集', type: :system do
+  before do
+    @user1 = FactoryBot.create(:user)
+    @user2 = FactoryBot.create(:user)
+  end
+
+  context 'ユーザー情報の編集ができるとき' do
+    it 'ログインしたユーザーは自分のユーザー情報の編集ができる' do
+      # user1でログインする
+      sign_in(@user1)
+      # user1のユーザー詳細ページへ移動する
+      visit user_path(@user1)
+      # ユーザー詳細ページに登録情報の編集へのリンクがあることを確認する
+      expect(page).to have_link '登録情報の編集', href: edit_user_registration_path(@user1)
+      # ユーザー情報編集ページへ移動する
+      visit edit_user_registration_path(@user1)
+      # 添付する画像を定義する
+      image_path = Rails.root.join('public/images/test_image2.png')
+      # 画像選択フォームに画像を添付する
+      attach_file('user[image]', image_path, make_visible: true)
+      # ユーザー情報を編集する
+      fill_in 'ニックネーム', with: 'テスト'
+      fill_in 'メールアドレス', with: 'test@email'
+      # 新しいパスワードを入力する
+      fill_in '新しいパスワード', with: '111111'
+      fill_in '新しいパスワード(確認)', with: '111111'
+      # 現在のパスワードを入力する
+      fill_in '現在のパスワード', with: @user1.password
+      # 「変更する」ボタンを押す
+      click_button '変更する'
+      # トップページに遷移したことを確認する
+      expect(current_path).to eq(root_path)
+      # user1のユーザー詳細ページに遷移する
+      visit user_path(@user1)
+      # 編集した内容が反映されていることを確認する(ニックネーム)
+      expect(page).to have_content('テスト')
+      # 編集した内容が反映されていることを確認する(画像)
+      expect(page).to have_selector('img')
+    end
+  end
+
+  context 'ユーザー情報の編集ができないとき' do
+    it 'ログインしたユーザーは自分以外のユーザー情報編集画面に遷移できない' do
+      # user1でログインする
+      sign_in(@user1)
+      # user2のユーザー詳細ページへ遷移する
+      visit edit_user_registration_path(@user2)
+      # ユーザー詳細ページに登録情報の編集へのリンクがないことを確認する
+      expect(page).to have_no_link '登録情報の編集', href: edit_user_registration_path(@user2)
+    end
+    it 'ログインしていないとユーザー情報編集画面に遷移できない' do
+      # トップページにいる
+      visit root_path
+      # user1のユーザー詳細ページへ遷移する
+      visit edit_user_registration_path(@user1)
+      # ユーザー詳細ページに登録情報の編集へのリンクがないことを確認する
+      expect(page).to have_no_link '登録情報の編集', href: edit_user_registration_path(@user1)
+    end
+  end
+end
