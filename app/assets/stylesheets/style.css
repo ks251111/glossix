@@ -51,12 +51,30 @@ a {
   list-style: none;
   background-color: white;
   position: absolute;
-  left: 50px;
+  top: 70px;
   border: 1px solid black;
 }
 
 .bottom-header {
-  padding-left: 50px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-btn a {
+  color: white;
+  background-color: #ff7fbf;
+  display: block;
+  width: 130px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ff7fbf;
+}
+
+.post-btn a:hover {
+  color: white;
+  background-color: pink;
 }
 /* フッター */
 
