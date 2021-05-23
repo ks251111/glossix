@@ -7,7 +7,7 @@
       <%= image_tag "noimage.jpg", class: "user-icon" %>
     <% end %>
 
-    <% if current_user.id == @user.id %>
+    <% if user_signed_in? && current_user.id == @user.id %>
       <%= link_to "登録情報の編集", edit_user_registration_path(@user.id) %>
     <% end %>
 
