@@ -1,10 +1,11 @@
+<div class="container">
+  <%= link_to "記事を投稿する", new_article_path %>
 
-<%= link_to "記事を投稿する", new_article_path %>
-
-<%# 記事一覧 %>
-<h3>新着記事</h3>
-<div class="article-contents">
-  <% @articles.each do |article| %>
-    <%= render partial: "layouts/article", locals: { article: article } %>
-  <% end %>
+  <%# 記事一覧 %>
+  <h3>新着記事</h3>
+  <div class="article-contents">
+    <% @articles.each do |article| %>
+      <%= render partial: "layouts/article", locals: { article: article } %>
+    <% end %>
+   </div>
 </div>

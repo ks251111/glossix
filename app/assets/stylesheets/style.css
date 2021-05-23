@@ -55,6 +55,9 @@ a {
   border: 1px solid black;
 }
 
+.bottom-header {
+  padding-left: 50px;
+}
 /* フッター */
 
 .footer {
@@ -65,6 +68,11 @@ a {
 .copyright {
   text-align: center;
   font-size: 10px;
+}
+
+/* 全ページ共通 */
+.container {
+  margin: 20px 50px;
 }
 
 /* 記事一覧 */
