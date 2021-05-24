@@ -38,6 +38,22 @@ a {
   width: 200px;
 }
 
+.search-form-field {
+  border: 1px solid lightgray;
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.search-btn {
+  color: white;
+  background-color: #f17dae;
+  border: 1px solid #f17dae;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+}
+
 .nav_links {
   display: flex;
   list-style: none;
