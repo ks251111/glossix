@@ -136,6 +136,15 @@ a {
   object-fit: contain;
 }
 
+.send-btn {
+  color: white;
+  background-color: #f17dae;
+  border: 1px solid #f17dae;
+  height: 30px;
+  width: 70px;
+  border-radius: 5px;
+}
+
 /* ユーザー詳細ページ */
 .user-icon {
   height: 200px;
