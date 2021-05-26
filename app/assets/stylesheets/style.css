@@ -134,14 +134,14 @@ a {
   align-items: center;
 }
 
-.title-field {
+.form-text {
   height: 30px;
   width: 400px;
   border: 1px solid lightgray;
   border-radius: 5px;
 }
 
-.text-field {
+.form-long-text {
   height: 100px;
   width: 400px;
   border: 1px solid lightgray;
