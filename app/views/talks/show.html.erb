@@ -18,7 +18,7 @@
     <% if user_signed_in? %>
       <%= form_with(model: [@talk, @response], local: true) do |f| %>
         <div class="field">
-          <%= f.text_area :text, placeholder: "コメントする" %>
+          <%= f.text_area :text, placeholder: "コメントする", class: "form-long-text" %>
         </div>
         <div class="send">
           <%= f.submit "コメント", class: "send-btn" %>
