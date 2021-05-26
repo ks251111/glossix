@@ -134,6 +134,10 @@ a {
   align-items: center;
 }
 
+.field {
+  margin-top: 10px;
+}
+
 .form-text {
   height: 30px;
   width: 400px;
