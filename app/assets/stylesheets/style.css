@@ -124,6 +124,36 @@ a {
 }
 
 /* 投稿フォーム */
+.post-title {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-field {
+  height: 30px;
+  width: 400px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.text-field {
+  height: 100px;
+  width: 400px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.pulldown {
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
 .preview-img {
   height: 100px;
   width: 100px;
@@ -143,6 +173,7 @@ a {
   height: 30px;
   width: 70px;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 /* ユーザー詳細ページ */
