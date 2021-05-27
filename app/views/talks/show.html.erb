@@ -1,6 +1,6 @@
 <div class="container">
   <div class="talk-title">
-    <%= @talk.title %>
+    <h2><%= @talk.title %></h2>
   </div>
   <div class="talk-name">
     <%= link_to "＠#{@talk.user.nickname}", user_path(@talk.user) %>
