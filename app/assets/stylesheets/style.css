@@ -68,7 +68,17 @@ a {
   background-color: white;
   position: absolute;
   top: 70px;
-  border: 1px solid black;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.category-lists a {
+  margin: 10px;
+}
+
+.category-lists a:hover {
+  background-color: pink;
 }
 
 .bottom-header {
