@@ -119,14 +119,18 @@ a {
   margin: 20px 50px;
 }
 
-/* 記事一覧 */
+/* トップページ */
 
 .article-img {
   height: 100px;
   width: 100px;
-  object-fit: contain;
 }
 
+.top-image {
+  width: 100%;
+}
+
+/* 記事詳細ページ */
 .article-show-img {
   height: 300px;
   width: 300px;
