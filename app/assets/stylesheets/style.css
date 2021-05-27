@@ -186,3 +186,20 @@ a {
   width: 200px;
   object-fit: contain;
 }
+
+/* Q＆Aトップページ */
+.q-btn {
+  color: white;
+  background-color: #f17dae;
+  display: block;
+  width: 130px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #f17dae;
+}
+
+.q-btn:hover {
+  color: white;
+  background-color: pink;
+}
