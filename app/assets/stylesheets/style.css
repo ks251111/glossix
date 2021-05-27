@@ -27,12 +27,16 @@ a {
 
 /* ヘッダー */
 
+.header {
+  padding: 0 100px;
+}
+
 .top-header {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .logo {
@@ -109,7 +113,6 @@ a {
 }
 
 .bottom-header {
-  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
