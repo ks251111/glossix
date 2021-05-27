@@ -254,6 +254,10 @@ a {
   object-fit: contain;
 }
 
+.profile {
+  text-align: center;
+}
+
 /* Q＆Aトップページ */
 .q-btn {
   color: white;
