@@ -144,14 +144,40 @@ a {
 
 /* 全ページ共通 */
 .container {
-  margin: 20px 50px;
+  margin: 20px 100px;
+}
+
+.title {
+  text-align: center;
 }
 
 /* トップページ */
 
 .article-img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+}
+
+.article-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article-contents::after {
+  display: block;
+  content: "";
+  width: 500px;
+}
+
+.article-list {
+  width: 500px;
+}
+
+.article-mdl-list {
+  display: flex;
+  align-items: center;
 }
 
 /* 記事詳細ページ */

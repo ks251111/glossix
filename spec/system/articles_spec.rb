@@ -34,6 +34,8 @@ RSpec.describe "記事投稿", type: :system do
       expect(page).to have_selector('img')
       # トップページには先ほど投稿した内容の記事が存在することを確認する(タイトル)
       expect(page).to have_content(@article_title)
+      # トップページには先ほど投稿した内容の記事が存在することを確認する(20文字以内のテキスト)
+      expect(page).to have_content(@article_text.truncate(20))
     end
   end
 
