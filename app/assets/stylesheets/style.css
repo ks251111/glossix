@@ -79,13 +79,13 @@ a {
 
 .post-btn a {
   color: white;
-  background-color: #ff7fbf;
+  background-color: #f17dae;
   display: block;
   width: 130px;
   line-height: 30px;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid #ff7fbf;
+  border: 1px solid #f17dae;
 }
 
 .post-btn a:hover {
