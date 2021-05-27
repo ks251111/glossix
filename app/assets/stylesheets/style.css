@@ -60,6 +60,18 @@ a {
   list-style: none;
 }
 
+#lists {
+  margin-right: 10px; 
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+#lists:hover {
+  color: white;
+  border: 1px solid #f17dae;
+}
+
 .hidden {
   display: none;
 }
@@ -68,7 +80,7 @@ a {
   list-style: none;
   background-color: white;
   position: absolute;
-  top: 70px;
+  top: 110px;
   border: 1px solid lightgray;
   border-radius: 5px;
   padding: 5px;
@@ -80,6 +92,20 @@ a {
 
 .category-lists a:hover {
   background-color: pink;
+}
+
+.q-link a {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.q-link a:hover {
+  color: white;
+  background-color: pink;
+  border: 1px solid #f17dae;
 }
 
 .bottom-header {
