@@ -73,7 +73,7 @@ RSpec.describe '掲示板詳細', type: :system do
     expect(page).to have_content("#{@talk.title}")
     expect(page).to have_content("#{@talk.text}")
     # 「コメントの投稿には新規登録/ログインが必要です」が表示されていることを確認する
-    expect(page).to have_content 'コメントの投稿には新規登録/ログインが必要です'
+    expect(page).to have_content '回答には新規登録/ログインが必要です'
   end
 end
 
