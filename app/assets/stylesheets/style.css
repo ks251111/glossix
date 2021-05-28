@@ -299,3 +299,72 @@ a {
   justify-content: space-between;
   color: gray;
 }
+
+/* Q＆A詳細ページ */
+
+.talk-thread {
+  display: flex;
+  justify-content: center;
+}
+
+.talk-show-contents {
+  border: 1px solid lightgray;
+  padding: 10px;
+  width: 700px;
+}
+
+.talk-show-title {
+  border-bottom: 1px solid lightgray;
+}
+
+.talk-show-name {
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+}
+
+.talk-show-text {
+  padding: 10px 0;
+}
+
+.talk-show-date {
+  text-align: right;
+}
+
+/* コメントフォーム */
+
+.comment-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.form-long-text {
+  width: 700px;
+}
+
+/* コメント一覧 */
+
+.comment-lists {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-mdl-list {
+  border: 1px solid lightgray;
+  margin: 10px 0;
+  width: 700px;
+  padding: 10px;
+}
+
+.comment-name {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+
+.comment-text {
+  padding: 10px 0;
+}
+
+.comment-date {
+  text-align: right;
+}
