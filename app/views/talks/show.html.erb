@@ -1,36 +1,58 @@
-<div class="talk-show-contents">
-  <div class="talk-title">
-    <%= @talk.title %>
-  </div>
-  <div class="talk-name">
-    <%= link_to "＠#{@talk.user.nickname}", user_path(@talk.user) %>
-  </div>
-  <div class="talk-text">
-    <%= @talk.text %>
-  </div>
+<div class="container">
+  <div class="talk-thread">
+    <div class="talk-show-contents">
+      <div class="talk-show-title">
+        <h2><%= @talk.title %></h2>
+      </div>
+      <div class="talk-show-name">
+        <%= link_to "投稿者：#{@talk.user.nickname}", user_path(@talk.user) %>
+      </div>
+      <div class="talk-show-text">
+        <%= simple_format(@talk.text) %>
+      </div>
+      <div class="talk-show-date">
+        <%= l @talk.created_at, format: :short %>
+      </div>
 
-  <% if user_signed_in? && current_user.id == @talk.user_id %>
-    <%= link_to "編集", edit_talk_path(@talk.id) %>
-    <%= link_to "削除", talk_path(@talk.id), method: :delete %>
-  <% end %>
+      <% if user_signed_in? && current_user.id == @talk.user_id %>
+        <%= link_to "編集", edit_talk_path(@talk.id) %>
+        <%= link_to "削除", talk_path(@talk.id), method: :delete %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="comment-form">
     <% if user_signed_in? %>
       <%= form_with(model: [@talk, @response], local: true) do |f| %>
-        <%= f.text_area :text, placeholder: "コメントする" %>
-        <%= f.submit "コメント" %>
+        <div class="field">
+          <%= f.text_area :text, placeholder: "回答を入力", class: "form-long-text" %>
+        </div>
+        <div class="send">
+          <%= f.submit "回答する", class: "send-btn" %>
+        </div>
       <% end %>
     <% else %>
-      <strong><p>***コメントの投稿には新規登録/ログインが必要です***</p></strong>
+      <strong><p>***回答には新規登録/ログインが必要です***</p></strong>
     <% end %>
   </div>
-  <div class="comment-list">
-    <h4>コメント一覧</h4>
+
+  <h2 class="title">回答一覧</h2>
+
+  <div class="comment-lists">
+    <div class="comment-list">
     <% @responses.each do |response| %>
-     <p>
-       <strong><%= link_to response.user.nickname, user_path(response.user) %></strong>
-       <%= response.text %>
-     </p>
-     <% end %>
+      <div class="comment-mdl-list">
+        <div class="comment-name">
+          <strong><%= link_to response.user.nickname, user_path(response.user) %></strong>
+        </div>
+        <div class="comment-text">
+          <%= simple_format(response.text) %>
+        </div>
+        <div class="comment-date">
+          <%= l response.created_at, format: :short %>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>

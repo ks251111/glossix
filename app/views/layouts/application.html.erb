@@ -18,8 +18,10 @@
 
         <div class="search-form">
           <%= form_with(url: search_articles_path, local: true, method: :get) do |f| %>
-            <%= f.text_field :keyword, placeholder: "検索" %>
-            <%= f.submit "検索" %>
+            <%= f.text_field :keyword, placeholder: "検索", class: "search-form-field" %>
+            <%= button_tag type: "submit", class: "search-btn" do %>
+              <i class="fas fa-search-plus"></i>
+            <% end %>
           <% end %>
         </div>
 
@@ -34,12 +36,17 @@
             <%= link_to "ログイン", new_user_session_path %>
           <% end %>
         </div>
+
+        <div class="post-btn">
+          <%= link_to "記事を投稿する", new_article_path %>
+        </div>
+
       </div>
 
       <div class="bottom-header">
         <ul class="nav_links">
           <li id="lists">カテゴリー</li>
-          <li><%= link_to "Q＆A", talks_path %></li>
+          <li class="q-link"><%= link_to "Q＆A", talks_path %></li>
         </ul>
         <ul class="category-lists hidden" id="pull-down">
           <li><%= link_to "メイク", "/categories/2" %></li>

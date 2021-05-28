@@ -1,10 +1,16 @@
+<div class="title-contents">
+  <h1 class="service-title">niceCOSME</h1>
+  <h2 class="service-text">
+  niceCOSMEは美容に関する情報交換ができるアプリです
+  </h2>
+</div>
 
-<%= link_to "記事を投稿する", new_article_path %>
-
-<%# 記事一覧 %>
-<h3>新着記事</h3>
-<div class="article-contents">
-  <% @articles.each do |article| %>
-    <%= render partial: "layouts/article", locals: { article: article } %>
-  <% end %>
+<div class="container">
+  <%# 記事一覧 %>
+  <h2 class="title">新着記事</h2>
+  <div class="article-contents">
+    <% @articles.each do |article| %>
+      <%= render partial: "layouts/article", locals: { article: article } %>
+    <% end %>
+   </div>
 </div>

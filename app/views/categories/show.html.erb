@@ -1,10 +1,12 @@
-<% if @article.present? %>
-  <h3><%= @article.category.name %></h3>
-  <div class="article-contents">
-    <% @articles.each do |article| %>
-      <%= render partial: "layouts/article", locals: { article: article } %>
-    <% end %>
-  </div>
-<% else %>
-  記事がありません
-<% end %>
+<div class="container">
+  <% if @article.present? %>
+    <h2 class="title"><%= @article.category.name %></h2>
+    <div class="article-contents">
+      <% @articles.each do |article| %>
+        <%= render partial: "layouts/article", locals: { article: article } %>
+      <% end %>
+    </div>
+  <% else %>
+    <p>記事がありません</p>
+  <% end %>
+</div>

@@ -1,5 +1,5 @@
-<div class="contents">
-  <h3><%= @user.nickname %>さんのプロフィール</h3>
+<div class="container">
+  <h2 class="title"><%= @user.nickname %>さん</h2>
   <div class="profile">
     <% if @user.image.present? %>
       <%= image_tag @user.image, class: "user-icon" %>
@@ -12,17 +12,18 @@
     <% end %>
 
   </div>
-  <h3><%= @user.nickname %>さんの記事一覧</h3>
+  <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
   <div class="article-contents">
     <% @user.articles.each do |article| %>
     <%= render partial: "layouts/article", locals: { article: article } %>
     <% end %>
   </div>
-  <h3><%= @user.nickname %>さんのいいねした記事一覧</h3>
+  <h2 class="title"><%= @user.nickname %>さんのいいねした記事一覧</h2>
   <div class="article-contents">
     <% @user.likes.each do |like| %>
       <div class="article-list">
         <%= link_to article_path(like.article.id) do %>
+        <div class="article-mdl-list">
           <div class="article-image">
             <% if like.article.images.present? %>
               <% like.article.images.first(1).each do |image| %>
@@ -33,12 +34,18 @@
             <% end %>
           </div>
 
-          <div class="article-title">
-            <%= like.article.title %>
+          <div class="article-info">
+            <h3 class="article-title">
+              <%= like.article.title %>
+            </h3>
+            <div class="article-text">
+              <%= like.article.text.truncate(20) %>
+            </div>
+            <div class="article-name">
+              <%= "投稿者：#{like.article.user.nickname}" %>
+            </div>
           </div>
-          <div class="article-name">
-            <%= "＠#{like.article.user.nickname}" %>
-          </div>
+        </div>
         <% end %>
       </div>    
     <% end %>

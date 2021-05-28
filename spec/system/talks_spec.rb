@@ -28,6 +28,8 @@ RSpec.describe "掲示板の投稿", type: :system do
       expect(current_path).to eq(talks_path)
       # 掲示板のトップページには先ほど投稿した内容のスレッドが存在することを確認する(タイトル)
       expect(page).to have_content(@talk_title)
+      # 掲示板のトップページには先ほど投稿した内容のスレッドが存在することを確認する(50文字以内のテキスト)
+      expect(page).to have_content(@talk_text.truncate(50))
     end
   end
 
@@ -109,9 +111,9 @@ RSpec.describe '掲示板編集', type: :system do
       end.to change(Talk, :count).by(0)
       # talk1の詳細ページに遷移することを確認する
       expect(current_path).to eq(talk_path(@talk1))
-      # トップページには先ほど変更した内容のスレッドが存在することを確認する(タイトル)
+      # 詳細ページには先ほど変更した内容のスレッドが存在することを確認する(タイトル)
       expect(page).to have_content("#{@talk1.title}+編集したタイトル")
-      # トップページには先ほど変更した内容のスレッドが存在することを確認する(テキスト)
+      # 詳細ページには先ほど変更した内容のスレッドが存在することを確認する(テキスト)
       expect(page).to have_content("#{@talk1.text}+編集したテキスト")
     end
   end

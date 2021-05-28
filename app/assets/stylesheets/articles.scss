@@ -1,3 +1,20 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title-contents {
+  background-image: image-url('title-image.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: 100px;
+  color: black;
+  text-shadow: 0 0 5px white;
+}
+
+.service-title {
+  font-size: 8vh;
+}
+
+.service-text {
+  font-size: 3vh;
+}
