@@ -25,7 +25,7 @@
               <%= "投稿者：#{talk.user.nickname}" %>
             </div>
             <div class="talk-date">
-              <%= talk.created_at %>
+              <%= l talk.created_at, format: :short %>
             </div>
           </div>
         </div>
