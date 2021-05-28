@@ -11,13 +11,13 @@ RSpec.describe '掲示板コメント機能', type: :system do
     sign_in(@talk.user)
     # 掲示板トップページに移動する
     visit talks_path
-    # 記事詳細ページに遷移する
+    # 掲示版詳細ページに遷移する
     visit talk_path(@talk)
     # フォームに情報を入力する
     fill_in 'response_text', with: @response1
     # コメントを送信すると、Responseモデルのカウントが1上がることを確認する
     expect do
-      click_button "コメント"
+      click_button "回答する"
     end.to change(Response, :count).by(1)
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq(talk_path(@talk))
