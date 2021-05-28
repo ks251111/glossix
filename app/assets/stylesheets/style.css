@@ -274,3 +274,28 @@ a {
   color: white;
   background-color: pink;
 }
+
+.talk-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.talk-lists {
+  display: flex;
+  justify-content: center;
+}
+
+.talk-mdl-list {
+  border: 1px solid lightgray;
+  width: 700px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.talk-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+}

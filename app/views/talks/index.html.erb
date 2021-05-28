@@ -1,12 +1,36 @@
 <div class="container">
-  <h3>Q＆A</h3>
-  <p>質問やお悩み相談ができるスペースです。</p>
-  <%= link_to "質問・相談する", new_talk_path, class: "q-btn" %>
+  <h2 class="title">Q＆A</h2>
+  <div class="talk-contents">
+    <p>質問やお悩み相談ができるスペースです。</p>
+    <div class="q-jump">
+      <%= link_to "質問・相談する", new_talk_path, class: "q-btn" %>
+    </div>
+  </div>
 
-  <h4>スレッド一覧</h4>
-  <div class="talk-list">
+  <h2 class="title">質問一覧</h2>
+  
+  <div class="talk-lists">
+    <div class="talk-list">
     <% @talks.each do |talk| %>
-      <%= link_to talk.title, talk_path(talk.id) %>
+      <%= link_to talk_path(talk.id) do %>
+        <div class="talk-mdl-list">
+          <h3 class="talk-title">
+            <%= talk.title %>
+          </h3>
+          <div class="talk-text">
+            <%= talk.text.truncate(50) %>
+          </div>
+          <div class="talk-bottom">
+            <div class="talk-name">
+              <%= "投稿者：#{talk.user.nickname}" %>
+            </div>
+            <div class="talk-date">
+              <%= talk.created_at %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
+    </div>
   </div>
 </div>
