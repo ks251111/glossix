@@ -57,13 +57,24 @@
       <strong><p>***コメントの投稿には新規登録/ログインが必要です***</p></strong>
     <% end %>
   </div>
-  <div class="comment-list">
-    <h4>コメント一覧</h4>
+
+  <h2 class="title">コメント一覧</h2>
+
+  <div class="comment-lists">
+    <div class="comment-list">
     <% @comments.each do |comment| %>
-     <p>
-       <strong><%= link_to comment.user.nickname, user_path(comment.user) %></strong>
-       <%= comment.text %>
-     </p>
-     <% end %>
+      <div class="comment-mdl-list">
+        <div class="comment-name">
+          <strong><%= link_to comment.user.nickname, user_path(comment.user) %></strong>
+        </div>
+        <div class="comment-text">
+          <%= simple_format(comment.text) %>
+        </div>
+        <div class="comment-date">
+          <%= l comment.created_at, format: :short %>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>
