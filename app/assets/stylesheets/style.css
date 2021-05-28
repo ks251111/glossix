@@ -184,10 +184,43 @@ a {
 }
 
 /* 記事詳細ページ */
+
+.article-show-contents {
+  display: flex;
+  justify-content: center;
+}
+
+.article-show-mdl-contents {
+  width: 700px;
+}
+
 .article-show-img {
   height: 300px;
   width: 300px;
   object-fit: contain;
+}
+
+.article-show-name {
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+}
+
+.article-show-text {
+  padding-top: 10px;
+}
+
+.article-show-date {
+  text-align: right;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.article-category {
+  padding: 10px 0;
+}
+
+.favorite {
+  padding-bottom: 10px;
 }
 
 /* フォーム */
