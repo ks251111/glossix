@@ -1,7 +1,8 @@
 class ResponsesController < ApplicationController
   def create
     @response = Response.create(response_params)
-    if @response.save
+    if @response.valid?
+      @response.save
       redirect_to talk_path(@response.talk)
     else
       @talk = @response.talk
