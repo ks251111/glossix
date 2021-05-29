@@ -16,3 +16,7 @@ ja:
       talk:
         title: タイトル
         text: 本文
+      comment:
+        text: コメント
+      response:
+        text: 回答
