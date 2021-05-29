@@ -5,6 +5,7 @@ RSpec.describe Comment, type: :model do
     user = FactoryBot.create(:user)
     article = FactoryBot.create(:article)
     @comment = FactoryBot.build(:comment, user_id: user.id, article_id: article.id)
+    sleep(0.1)
   end
 
   describe 'コメント機能' do
@@ -18,17 +19,17 @@ RSpec.describe Comment, type: :model do
       it 'textが空ではコメントできない' do
         @comment.text = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Text can't be blank")
+        expect(@comment.errors.full_messages).to include("コメントを入力してください")
       end
       it 'userが紐付いていないとコメントできない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("User must exist")
+        expect(@comment.errors.full_messages).to include("Userを入力してください")
       end
       it 'articleが紐付いていないとコメントできない' do
         @comment.article = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Article must exist")
+        expect(@comment.errors.full_messages).to include("Articleを入力してください")
       end
     end
   end

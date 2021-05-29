@@ -5,6 +5,7 @@ RSpec.describe Response, type: :model do
     user = FactoryBot.create(:user)
     talk = FactoryBot.create(:talk)
     @response = FactoryBot.build(:response, user_id: user.id, talk_id: talk.id)
+    sleep(0.1)
   end
 
   describe '掲示板のコメント機能' do
@@ -18,17 +19,17 @@ RSpec.describe Response, type: :model do
       it 'textが空ではコメントできない' do
         @response.text = ''
         @response.valid?
-        expect(@response.errors.full_messages).to include("Text can't be blank")
+        expect(@response.errors.full_messages).to include("回答を入力してください")
       end
       it 'userが紐付いていなければコメントできない' do
         @response.user = nil
         @response.valid?
-        expect(@response.errors.full_messages).to include("User must exist")
+        expect(@response.errors.full_messages).to include("Userを入力してください")
       end
       it 'talkが紐付いていなければコメントできない' do
         @response.talk = nil
         @response.valid?
-        expect(@response.errors.full_messages).to include("Talk must exist")
+        expect(@response.errors.full_messages).to include("Talkを入力してください")
       end
     end
   end

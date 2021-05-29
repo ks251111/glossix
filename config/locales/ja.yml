@@ -3,3 +3,20 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%Y/%m/%d %H:%M"
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      article:
+        title: タイトル
+        text: 本文
+        category_id: カテゴリー
+      talk:
+        title: タイトル
+        text: 本文
+      comment:
+        text: コメント
+      response:
+        text: 回答

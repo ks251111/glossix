@@ -54,6 +54,7 @@
   <div class="comment-form">
     <% if user_signed_in? %>
       <%= form_with(model: [@article, @comment], local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <div class="field">
           <%= f.text_area :text, placeholder: "コメントする", class: "form-long-text" %>
         </div>
