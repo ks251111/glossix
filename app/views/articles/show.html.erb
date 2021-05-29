@@ -1,53 +1,54 @@
 <div class="container">
   <div class="article-show-contents">
-  <div class="article-show-mdl-contents">
-  <div class="article-title">
-    <h2><%= @article.title %></h2>
-  </div>
-  <div class="article-show-image">
-    <% if @article.images.present? %>
-      <% @article.images.each do |image| %>
-        <%= image_tag image, class: "article-show-img" %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="article-show-name">
-    <%= link_to "投稿者：#{@article.user.nickname}", user_path(@article.user) %>
-  </div>
-  <div class="article-show-text">
-    <%= simple_format(@article.text) %>
-  </div>
-  <div class="article-show-date">
-    <%= l @article.created_at, format: :short %>
-  </div>
-  <div class="article-category">
-    <%= link_to "カテゴリー：#{@article.category.name}", category_path(@article.category) %>
-  </div>
-
-  <div class="favorite">
-    <% if user_signed_in? %>
-      <% if current_user.liked_by?(@article) %>
-        <%= link_to article_like_path(@article), method: :delete, class: "like-link" do %>
-          <i class="fa fa-heart unlike-btn", id="unlike"></i>
+    <div class="article-show-mdl-contents">
+      <div class="article-title">
+        <h2><%= @article.title %></h2>
+      </div>
+      <div class="article-show-image">
+        <% if @article.images.present? %>
+          <% @article.images.each do |image| %>
+            <%= image_tag image, class: "article-show-img" %>
+          <% end %>
         <% end %>
-        <%= @article.likes.count %>
-      <% else %>
-        <%= link_to article_likes_path(@article), method: :post, class: "like-link" do %>
-          <i class="fa fa-heart like-btn", id="like"></i>
-        <% end %>
-        <%= @article.likes.count %>
-      <% end %>
-    <% else %>
-      <i class="fa fa-heart like-btn"></i>
-      <%= @article.likes.count %>
-    <% end %>
-  </div>
+      </div>
 
-  <% if user_signed_in? && current_user.id == @article.user_id %>
-    <%= link_to "編集", edit_article_path(@article.id) %>
-    <%= link_to "削除", article_path(@article.id), method: :delete %>
-  <% end %>
-  </div>
+      <div class="article-show-name">
+        <%= link_to "投稿者：#{@article.user.nickname}", user_path(@article.user) %>
+      </div>
+      <div class="article-show-text">
+        <%= simple_format(@article.text) %>
+      </div>
+      <div class="article-show-date">
+        <%= l @article.created_at, format: :short %>
+      </div>
+      <div class="article-category">
+        <%= link_to "カテゴリー：#{@article.category.name}", category_path(@article.category) %>
+      </div>
+
+      <div class="favorite">
+        <% if user_signed_in? %>
+          <% if current_user.liked_by?(@article) %>
+            <%= link_to article_like_path(@article), method: :delete, class: "like-link" do %>
+              <i class="fa fa-heart unlike-btn", id="unlike"></i>
+            <% end %>
+            <%= @article.likes.count %>
+          <% else %>
+            <%= link_to article_likes_path(@article), method: :post, class: "like-link" do %>
+              <i class="fa fa-heart like-btn", id="like"></i>
+            <% end %>
+            <%= @article.likes.count %>
+          <% end %>
+        <% else %>
+          <i class="fa fa-heart like-btn"></i>
+          <%= @article.likes.count %>
+        <% end %>
+      </div>
+
+      <% if user_signed_in? && current_user.id == @article.user_id %>
+        <%= link_to "編集", edit_article_path(@article.id) %>
+        <%= link_to "削除", article_path(@article.id), method: :delete %>
+      <% end %>
+    </div>
   </div>
 
   <div class="comment-form">

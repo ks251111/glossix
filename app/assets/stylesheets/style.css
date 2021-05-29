@@ -15,7 +15,6 @@ ul,li {
 }
 
 /* ページ全体 */
-
 * {
   box-sizing: border-box; 
  }
@@ -26,7 +25,6 @@ a {
 }
 
 /* ヘッダー */
-
 .header {
   padding: 0 100px;
 }
@@ -48,6 +46,7 @@ a {
   width: 300px;
   height: 30px;
   border-radius: 5px;
+  padding: 10px;
 }
 
 .search-btn {
@@ -133,8 +132,8 @@ a {
   color: white;
   background-color: pink;
 }
-/* フッター */
 
+/* フッター */
 .footer {
   background-color: lightgray;
   padding: 10px 0;
@@ -155,7 +154,6 @@ a {
 }
 
 /* トップページ */
-
 .article-img {
   height: 200px;
   width: 200px;
@@ -184,7 +182,6 @@ a {
 }
 
 /* 記事詳細ページ */
-
 .article-show-contents {
   display: flex;
   justify-content: center;
@@ -243,19 +240,30 @@ a {
   width: 400px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  padding: 10px;
+}
+
+.form-title-text {
+  height: 30px;
+  width: 700px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .form-long-text {
   height: 100px;
-  width: 400px;
+  width: 700px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  padding: 10px;
 }
 
 .pulldown {
   height: 30px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  padding-left: 10px;
 }
 
 .preview-img {
@@ -334,7 +342,6 @@ a {
 }
 
 /* Q＆A詳細ページ */
-
 .talk-thread {
   display: flex;
   justify-content: center;
@@ -364,19 +371,13 @@ a {
 }
 
 /* コメントフォーム */
-
 .comment-form {
   display: flex;
   justify-content: center;
   padding: 10px;
 }
 
-.form-long-text {
-  width: 700px;
-}
-
 /* コメント一覧 */
-
 .comment-lists {
   display: flex;
   justify-content: center;
