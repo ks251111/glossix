@@ -153,6 +153,10 @@ a {
   text-align: center;
 }
 
+.breadcrumb {
+  margin-left: 100px;
+}
+
 /* トップページ */
 .article-img {
   height: 200px;
