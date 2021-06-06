@@ -58,6 +58,13 @@ a {
   border-radius: 5px;
 }
 
+.search-btn:hover {
+  color: white;
+  background-color: pink;
+  border: 1px solid #f17dae;
+  cursor: pointer;
+}
+
 .nav_links {
   display: flex;
   list-style: none;
@@ -294,6 +301,13 @@ a {
   width: 70px;
   border-radius: 5px;
   margin-top: 10px;
+}
+
+.send-btn:hover {
+  color: white;
+  background-color: pink;
+  border: 1px solid #f17dae;
+  cursor: pointer;
 }
 
 /* ユーザー詳細ページ */
