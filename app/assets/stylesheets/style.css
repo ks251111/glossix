@@ -58,6 +58,13 @@ a {
   border-radius: 5px;
 }
 
+.search-btn:hover {
+  color: white;
+  background-color: pink;
+  border: 1px solid #f17dae;
+  cursor: pointer;
+}
+
 .nav_links {
   display: flex;
   list-style: none;
