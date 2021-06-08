@@ -27,6 +27,11 @@ a {
 /* ヘッダー */
 .header {
   padding: 0 100px;
+  position: fixed;
+  background-color: #ffffff;
+  top: 0;
+  width: 100%;
+  height: 115px;
 }
 
 .top-header {
@@ -70,6 +75,10 @@ a {
   list-style: none;
 }
 
+.nav_right a {
+  margin-left: 10px;
+}
+
 #lists {
   margin-right: 10px; 
   padding: 10px;
@@ -93,11 +102,15 @@ a {
   top: 110px;
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 5px;
 }
 
 .category-lists a {
-  margin: 10px;
+  padding: 10px;
+  display: block;
+}
+
+.category-lists li {
+  border-bottom: 1px solid lightgray;
 }
 
 .category-lists a:hover {
@@ -154,6 +167,7 @@ a {
 /* 全ページ共通 */
 .container {
   margin: 20px 100px;
+  margin-top: 115px;
 }
 
 .title {
@@ -165,6 +179,10 @@ a {
 }
 
 /* トップページ */
+.article-index {
+  margin: 20px 100px;
+}
+
 .article-img {
   height: 200px;
   width: 200px;
