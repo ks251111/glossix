@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     resources :responses, only: :create
   end
   resources :categories, only: :show
+  resources :relationships, only: [:create, :destroy]
 end
