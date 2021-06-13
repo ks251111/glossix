@@ -17,6 +17,16 @@ crumb :show_user do |user|
   parent :root
 end
 
+crumb :following do |user|
+  link "#{user.nickname}さんのフォロー一覧", followings_user_path(user)
+  parent :show_user, user
+end
+
+crumb :follower do |user|
+  link "#{user.nickname}さんのフォロワー一覧", followers_user_path(user)
+  parent :show_user, user
+end
+
 crumb :edit_user do |user|
   link "登録情報の編集",  edit_user_registration_path(user)
   parent :show_user, user
