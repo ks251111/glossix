@@ -339,6 +339,14 @@ a {
   text-align: center;
 }
 
+/* フォロー・フォロワー一覧 */
+.follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 /* Q＆Aトップページ */
 .q-btn {
   color: white;

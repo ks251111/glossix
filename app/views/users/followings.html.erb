@@ -1,8 +1,12 @@
 <div class="container">
-  <h2>フォロー一覧</h2>
-  <% @users.each do |user| %>
-    <%= link_to user.nickname, user_path(user.id) %>
-  <% end %>
+  <h2 class="title">フォロー一覧</h2>
+  <div class="follow">
+    <% @users.each do |user| %>
+      <div class="follow-list">
+        <%= link_to user.nickname, user_path(user.id) %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <% breadcrumb :following, @user %>
