@@ -15,6 +15,7 @@
 - has_many :likes
 - has_many :talks
 - has_many :responses
+- has_many :relationships
 
 ## articlesテーブル
 
@@ -81,3 +82,14 @@
 
 - belongs_to :user
 - belongs_to :talk
+
+## relationshipsテーブル
+
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| follower | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
