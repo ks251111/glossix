@@ -167,7 +167,6 @@ a {
 /* 全ページ共通 */
 .container {
   margin: 20px 100px;
-  margin-top: 115px;
 }
 
 .title {
@@ -176,6 +175,7 @@ a {
 
 .breadcrumb {
   margin-left: 100px;
+  margin-top: 115px;
 }
 
 /* トップページ */
