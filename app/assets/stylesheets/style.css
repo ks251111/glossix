@@ -339,6 +339,27 @@ a {
   text-align: center;
 }
 
+.user-info {
+  margin: 10px;
+}
+
+.follow-btn {
+  margin-bottom: 10px;
+  height: 40px;
+  width: 110px;
+  color: white;
+  background-color: #f17dae;
+  border: 1px solid #f17dae;
+  border-radius: 50px;
+}
+
+.follow-btn:hover {
+  color: white;
+  background-color: pink;
+  border: 1px solid #f17dae;
+  cursor: pointer;
+}
+
 /* フォロー・フォロワー一覧 */
 .follow {
   display: flex;

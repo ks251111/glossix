@@ -1,15 +1,18 @@
 <div class="container">
   <h2 class="title"><%= @user.nickname %>さん</h2>
   <div class="profile">
-    <% if @user.image.present? %>
-      <%= image_tag @user.image, class: "user-icon" %>
-    <% else %>
-      <%= image_tag "noimage.jpg", class: "user-icon" %>
-    <% end %>
-
-    <% if user_signed_in? && current_user.id == @user.id %>
-      <%= link_to "登録情報の編集", edit_user_registration_path(@user.id) %>
-    <% end %>
+    <div class="user-info">
+      <% if @user.image.present? %>
+        <%= image_tag @user.image, class: "user-icon" %>
+      <% else %>
+        <%= image_tag "noimage.jpg", class: "user-icon" %>
+      <% end %>
+      <div class="user-edit">
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <%= link_to "登録情報の編集", edit_user_registration_path(@user.id) %>
+        <% end %>
+      </div>
+    </div>
 
     <div id="relationship_<%= @user.id %>">
       <%= render partial: "relationships/relationship", locals: { user: @user } %>
