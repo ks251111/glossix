@@ -8,9 +8,14 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get :followings, :followers
+    end
+  end
   resources :talks do
     resources :responses, only: :create
   end
   resources :categories, only: :show
+  resources :relationships, only: [:create, :destroy]
 end
