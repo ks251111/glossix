@@ -15,11 +15,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :user
   has_one_attached :image
   
-  with_options presence: true do
-    validates :nickname
-    validates :user_id
-    validates :follower_id
-  end
+  validates :nickname, presence: true
 
   VALID_PASSWORD_REGIX = /\A[a-z0-9]+\z/i
   validates :password, format: { with: VALID_PASSWORD_REGIX }, on: :create
