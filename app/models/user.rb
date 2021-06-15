@@ -21,6 +21,18 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGIX }, on: :create
   validates :password, format: { with: VALID_PASSWORD_REGIX }, on: :update, allow_blank: :true
 
+  def update_without_current_password(params, *options)
+    
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
+  end
+
   def liked_by?(article_id)
     likes.where(article_id: article_id).exists?
   end
