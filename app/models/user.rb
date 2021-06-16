@@ -33,10 +33,6 @@ class User < ApplicationRecord
     result
   end
 
-  def liked_by?(article_id)
-    likes.where(article_id: article_id).exists?
-  end
-
   def following?(user)
     followings.include?(user)
   end
