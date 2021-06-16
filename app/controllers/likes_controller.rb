@@ -1,11 +1,23 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
   def create
-    @like = Like.create(user_id: current_user.id, article_id: params[:article_id])
-    redirect_to article_path(@like.article)
+    @like = current_user.likes.build(like_params)
+    @article = @like.article
+    if @like.save
+      respond_to :js
+    end
   end
 
   def destroy
-    @like = Like.find_by(user_id: current_user.id, article_id: params[:article_id]).destroy
-    redirect_to article_path(@like.article)
+    @like = Like.find_by(id: params[:id])
+    @article = @like.article
+    if @like.destroy
+      respond_to :js
+    end
+  end
+
+  private
+  def like_params
+    params.permit(:article_id)
   end
 end
