@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many_attached :images
   has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
@@ -20,5 +20,9 @@ class Article < ApplicationRecord
     else
       Article.all
     end
+  end
+
+  def liked_by(user)
+    Like.find_by(user_id: user.id, article_id: id)
   end
 end
