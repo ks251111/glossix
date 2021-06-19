@@ -85,6 +85,7 @@ a {
   padding: 10px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 #lists:hover {
@@ -125,6 +126,7 @@ a {
   text-align: center;
   border: 1px solid lightgray;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .q-link a:hover {
@@ -141,6 +143,7 @@ a {
 
 .post-btn a {
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   display: block;
   width: 130px;
@@ -332,6 +335,7 @@ a {
 
 .send-btn {
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   border: 1px solid #f17dae;
   height: 30px;
@@ -368,6 +372,7 @@ a {
   height: 40px;
   width: 110px;
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   border: 1px solid #f17dae;
   border-radius: 50px;
@@ -391,6 +396,7 @@ a {
 /* Q＆Aトップページ */
 .q-btn {
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   display: block;
   width: 130px;
