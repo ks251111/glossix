@@ -13,10 +13,10 @@
   
     <div class="article-info">
       <h3 class="article-title">
-        <%= article.title %>
+        <%= article.title.truncate(15) %>
       </h3>
       <div class="article-text">
-        <%= article.text.truncate(20) %>
+        <%= article.text.truncate(15) %>
       </div>
       <div class="article-name">
         <%= "投稿者：#{article.user.nickname}" %>
