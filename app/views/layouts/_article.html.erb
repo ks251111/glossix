@@ -7,7 +7,7 @@
         <%= image_tag image, class: "article-img" %>
       <% end %>
     <% else %>
-      <%= image_tag "noimage.jpg", class: "article-img" %>
+      <%= image_tag "noimage.jpeg", class: "article-img" %>
     <% end %>
     </div>
   
@@ -22,7 +22,7 @@
         <% if article.user.image.present? %>
           <%= image_tag article.user.image, class: "post-user-icon" %>
         <% else %>
-          <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+          <%= image_tag "noimage-user.png", class: "post-user-icon" %>
         <% end %>
         <%= article.user.nickname %>
       </div>

@@ -19,7 +19,7 @@
           <% if @article.user.image.present? %>
             <%= image_tag @article.user.image, class: "post-user-icon" %>
           <% else %>
-            <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+            <%= image_tag "noimage-user.png", class: "post-user-icon" %>
           <% end %>
           <%= @article.user.nickname %>
         </div>
@@ -73,7 +73,7 @@
             <% if comment.user.image.present? %>
               <%= image_tag comment.user.image, class: "post-user-icon" %>
             <% else %>
-              <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+              <%= image_tag "noimage-user.png", class: "post-user-icon" %>
             <% end %>
             <%= comment.user.nickname %>
           </div>

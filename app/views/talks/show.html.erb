@@ -10,7 +10,7 @@
           <% if @talk.user.image.present? %>
             <%= image_tag @talk.user.image, class: "post-user-icon" %>
           <% else %>
-            <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+            <%= image_tag "noimage-user.png", class: "post-user-icon" %>
           <% end %>
           <%= @talk.user.nickname %>
         </div>
@@ -57,7 +57,7 @@
             <% if response.user.image.present? %>
               <%= image_tag response.user.image, class: "post-user-icon" %>
             <% else %>
-              <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+              <%= image_tag "noimage-user.png", class: "post-user-icon" %>
             <% end %>
             <%= response.user.nickname %>
           </div>
