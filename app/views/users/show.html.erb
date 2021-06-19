@@ -48,8 +48,13 @@
             <div class="article-text">
               <%= like.article.text.truncate(20) %>
             </div>
-            <div class="article-name">
-              <%= "投稿者：#{like.article.user.nickname}" %>
+            <div class="post-name">
+              <% if like.article.user.image.present? %>
+                <%= image_tag like.article.user.image, class: "post-user-icon" %>
+              <% else %>
+                <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+              <% end %>
+              <%= like.article.user.nickname %>
             </div>
           </div>
         </div>

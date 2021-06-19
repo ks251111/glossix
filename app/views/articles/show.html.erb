@@ -14,9 +14,17 @@
         </div>
       </div>
 
-      <div class="article-show-name">
-        <%= link_to "投稿者：#{@article.user.nickname}", user_path(@article.user) %>
-      </div>
+      <%= link_to user_path(@article.user) do %>
+        <div class="post-show-name">
+          <% if @article.user.image.present? %>
+            <%= image_tag @article.user.image, class: "post-user-icon" %>
+          <% else %>
+            <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+          <% end %>
+          <%= @article.user.nickname %>
+        </div>
+      <% end %>
+
       <div class="article-show-text">
         <%= simple_format(@article.text) %>
       </div>
@@ -60,9 +68,17 @@
     <div class="comment-list">
     <% @comments.each do |comment| %>
       <div class="comment-mdl-list">
-        <div class="comment-name">
-          <strong><%= link_to comment.user.nickname, user_path(comment.user) %></strong>
-        </div>
+        <%= link_to user_path(comment.user) do %>
+          <div class="post-show-name">
+            <% if comment.user.image.present? %>
+              <%= image_tag comment.user.image, class: "post-user-icon" %>
+            <% else %>
+              <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+            <% end %>
+            <%= comment.user.nickname %>
+          </div>
+        <% end %>
+
         <div class="comment-text">
           <%= simple_format(comment.text) %>
         </div>

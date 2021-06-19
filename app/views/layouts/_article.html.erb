@@ -18,8 +18,13 @@
       <div class="article-text">
         <%= article.text.truncate(15) %>
       </div>
-      <div class="article-name">
-        <%= "投稿者：#{article.user.nickname}" %>
+      <div class="post-name">
+        <% if article.user.image.present? %>
+          <%= image_tag article.user.image, class: "post-user-icon" %>
+        <% else %>
+          <%= image_tag "noimage.jpg", class: "post-user-icon" %>
+        <% end %>
+        <%= article.user.nickname %>
       </div>
     </div>
   </div>

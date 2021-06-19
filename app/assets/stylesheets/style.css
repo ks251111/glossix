@@ -165,7 +165,7 @@ a {
   font-size: 10px;
 }
 
-/* 全ページ共通 */
+/* 共通部分 */
 .container {
   margin: 20px 100px;
 }
@@ -177,6 +177,20 @@ a {
 .breadcrumb {
   margin-left: 100px;
   margin-top: 115px;
+}
+
+.post-name {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.post-user-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 /* トップページ */
@@ -228,7 +242,9 @@ a {
   object-fit: contain;
 }
 
-.article-show-name {
+.post-show-name {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid lightgray;
   padding: 10px 0;
 }
@@ -410,6 +426,10 @@ a {
 .talk-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+.talk-date {
   color: gray;
 }
 
@@ -427,11 +447,6 @@ a {
 
 .talk-show-title {
   border-bottom: 1px solid lightgray;
-}
-
-.talk-show-name {
-  border-bottom: 1px solid lightgray;
-  padding: 10px 0;
 }
 
 .talk-show-text {
