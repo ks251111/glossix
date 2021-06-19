@@ -5,11 +5,13 @@
         <h2><%= @article.title %></h2>
       </div>
       <div class="article-show-image">
-        <% if @article.images.present? %>
-          <% @article.images.each do |image| %>
-            <%= image_tag image, class: "article-show-img" %>
+        <div class="slider">
+          <% if @article.images.present? %>
+            <% @article.images.each do |image| %>
+              <%= image_tag image, class: "article-show-img" %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
 
       <div class="article-show-name">
