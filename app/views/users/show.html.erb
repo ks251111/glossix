@@ -21,13 +21,13 @@
   </div>
   <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
   <div class="article-contents">
-    <% @user.articles.each do |article| %>
+    <% @user.articles.reverse_each do |article| %>
     <%= render partial: "layouts/article", locals: { article: article } %>
     <% end %>
   </div>
   <h2 class="title"><%= @user.nickname %>さんのいいねした記事一覧</h2>
   <div class="article-contents">
-    <% @user.likes.each do |like| %>
+    <% @user.likes.reverse_each do |like| %>
       <div class="article-list">
         <%= link_to article_path(like.article.id) do %>
         <div class="article-mdl-list">
