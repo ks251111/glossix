@@ -18,13 +18,19 @@
       <div class="article-text">
         <%= article.text.truncate(15) %>
       </div>
-      <div class="post-name">
-        <% if article.user.image.present? %>
-          <%= image_tag article.user.image, class: "post-user-icon" %>
-        <% else %>
-          <%= image_tag "noimage-user.png", class: "post-user-icon" %>
-        <% end %>
-        <%= article.user.nickname %>
+      <div class="article-bottom">
+        <div class="post-name">
+          <% if article.user.image.present? %>
+            <%= image_tag article.user.image, class: "post-user-icon" %>
+          <% else %>
+            <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+          <% end %>
+          <%= article.user.nickname %>
+        </div>
+        <div class="article-like">
+          <i class="fa fa-heart like-btn"></i>
+          <%= article.likes.count %>
+        </div>
       </div>
     </div>
   </div>
