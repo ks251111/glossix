@@ -183,28 +183,14 @@ a {
   margin-top: 115px;
 }
 
-.post-name {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.post-user-icon {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
 /* トップページ */
 .article-index {
   margin: 20px 100px;
 }
 
 .article-img {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   object-fit: contain;
   margin-right: 30px;
 }
@@ -219,15 +205,42 @@ a {
   display: block;
   content: "";
   width: 500px;
+  margin: 30px;
 }
 
 .article-list {
   width: 500px;
+  padding-right: 50px;
+  margin: 30px;
 }
 
 .article-mdl-list {
   display: flex;
   align-items: center;
+}
+
+.article-info {
+  width: 270px;
+}
+
+.article-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.post-name {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.post-user-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 /* 記事詳細ページ */
