@@ -15,19 +15,22 @@
     <header class="header">
       <div class="top-header">
         <div class="nav_left">
-          <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
-        </div>
+          <div class="logo-space">
+            <%= link_to image_tag("logo.jpg", class: :logo), root_path %>
+          </div>
 
-        <div class="search-form">
-          <%= form_with(url: search_articles_path, local: true, method: :get) do |f| %>
-            <%= f.text_field :keyword, placeholder: "検索", class: "search-form-field" %>
-            <%= button_tag type: "submit", class: "search-btn" do %>
-              <i class="fas fa-search-plus"></i>
+          <div class="search-form">
+            <%= form_with(url: search_articles_path, local: true, method: :get) do |f| %>
+              <%= f.text_field :keyword, placeholder: "検索", class: "search-form-field" %>
+              <%= button_tag type: "submit", class: "search-btn" do %>
+                <i class="fas fa-search-plus"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
 
         <div class="nav_right">
+          <div class="login-status">
           <%# ログイン状態 %>
           <% if user_signed_in? %>
             <%= link_to "#{current_user.nickname}", user_path(current_user) %>
@@ -37,12 +40,12 @@
             <%= link_to "新規登録", new_user_registration_path %>
             <%= link_to "ログイン", new_user_session_path %>
           <% end %>
-        </div>
+          </div>
 
-        <div class="post-btn">
-          <%= link_to "記事を投稿する", new_article_path %>
+          <div class="post-btn">
+            <%= link_to "記事を投稿する", new_article_path %>
+          </div>
         </div>
-
       </div>
 
       <div class="bottom-header">

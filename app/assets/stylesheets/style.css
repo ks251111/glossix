@@ -26,7 +26,7 @@ a {
 
 /* ヘッダー */
 .header {
-  padding: 0 100px;
+  padding: 0 150px;
   position: fixed;
   background-color: #ffffff;
   top: 0;
@@ -43,8 +43,16 @@ a {
   padding: 10px 0;
 }
 
+.nav_left {
+  display: flex;
+}
+
 .logo {
   width: 200px;
+}
+
+.search-form {
+  margin-top: 4px;
 }
 
 .search-form-field {
@@ -76,8 +84,36 @@ a {
   list-style: none;
 }
 
+.nav_right {
+  display: flex;
+  align-items: center;
+}
+
 .nav_right a {
   margin-left: 10px;
+}
+
+.post-btn a {
+  color: white;
+  font-weight: bold;
+  background-color: #f17dae;
+  display: block;
+  width: 130px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #f17dae;
+}
+
+.post-btn a:hover {
+  color: white;
+  background-color: pink;
+}
+
+.bottom-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 #lists {
@@ -135,29 +171,6 @@ a {
   border: 1px solid #f17dae;
 }
 
-.bottom-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.post-btn a {
-  color: white;
-  font-weight: bold;
-  background-color: #f17dae;
-  display: block;
-  width: 130px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 5px;
-  border: 1px solid #f17dae;
-}
-
-.post-btn a:hover {
-  color: white;
-  background-color: pink;
-}
-
 /* フッター */
 .footer {
   background-color: lightgray;
@@ -179,14 +192,13 @@ a {
 }
 
 .breadcrumb {
-  margin-left: 100px;
+  margin-left: 150px;
   margin-top: 115px;
 }
 
 .user-name {
   display: flex;
   align-items: center;
-  margin-top: 10px;
 }
 
 .user-icon {
@@ -235,6 +247,10 @@ a {
 
 .article-info {
   width: 270px;
+}
+
+.article-text {
+  margin-bottom: 10px;
 }
 
 .article-bottom {
@@ -441,6 +457,10 @@ a {
   width: 700px;
   margin: 10px;
   padding: 10px;
+}
+
+.talk-text {
+  margin-bottom: 10px;
 }
 
 .talk-bottom {
