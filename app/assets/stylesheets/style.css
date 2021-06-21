@@ -89,7 +89,38 @@ a {
   align-items: center;
 }
 
-.nav_right a {
+.login-status {
+  display: flex;
+  align-items: center;
+}
+
+.login-status .user-name:hover {
+  cursor: pointer;
+}
+
+.login-menu {
+  list-style: none;
+  background-color: white;
+  position: absolute;
+  top: 55px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.login-menu a {
+  padding: 10px;
+  display: block;
+}
+
+.login-menu li {
+  border-bottom: 1px solid lightgray;
+}
+
+.login-menu a:hover {
+  background-color: pink;
+}
+
+.logout-menu a {
   margin-left: 10px;
 }
 
@@ -103,6 +134,7 @@ a {
   text-align: center;
   border-radius: 5px;
   border: 1px solid #f17dae;
+  margin-left: 10px;
 }
 
 .post-btn a:hover {
