@@ -7,11 +7,6 @@
       <% else %>
         <%= image_tag "noimage-user.png", class: "user-image" %>
       <% end %>
-      <div class="user-edit">
-        <% if user_signed_in? && current_user.id == @user.id %>
-          <%= link_to "登録情報の編集", edit_user_registration_path(@user.id) %>
-        <% end %>
-      </div>
     </div>
 
     <div id="relationship_<%= @user.id %>">
