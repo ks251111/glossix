@@ -17,9 +17,9 @@
       <%= link_to user_path(@article.user) do %>
         <div class="post-show-name">
           <% if @article.user.image.present? %>
-            <%= image_tag @article.user.image, class: "post-user-icon" %>
+            <%= image_tag @article.user.image, class: "user-icon" %>
           <% else %>
-            <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+            <%= image_tag "noimage-user.png", class: "user-icon" %>
           <% end %>
           <%= @article.user.nickname %>
         </div>
@@ -71,9 +71,9 @@
         <%= link_to user_path(comment.user) do %>
           <div class="post-show-name">
             <% if comment.user.image.present? %>
-              <%= image_tag comment.user.image, class: "post-user-icon" %>
+              <%= image_tag comment.user.image, class: "user-icon" %>
             <% else %>
-              <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+              <%= image_tag "noimage-user.png", class: "user-icon" %>
             <% end %>
             <%= comment.user.nickname %>
           </div>

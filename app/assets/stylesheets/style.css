@@ -183,6 +183,20 @@ a {
   margin-top: 115px;
 }
 
+.user-name {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
 /* トップページ */
 .article-index {
   margin: 20px 100px;
@@ -227,20 +241,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-
-.post-name {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.post-user-icon {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
 }
 
 /* 記事詳細ページ */
@@ -365,7 +365,7 @@ a {
 }
 
 /* ユーザー詳細ページ */
-.user-icon {
+.user-image {
   height: 200px;
   width: 200px;
   object-fit: cover;

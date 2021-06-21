@@ -19,11 +19,11 @@
         <%= article.text.truncate(20) %>
       </div>
       <div class="article-bottom">
-        <div class="post-name">
+        <div class="user-name">
           <% if article.user.image.present? %>
-            <%= image_tag article.user.image, class: "post-user-icon" %>
+            <%= image_tag article.user.image, class: "user-icon" %>
           <% else %>
-            <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+            <%= image_tag "noimage-user.png", class: "user-icon" %>
           <% end %>
           <%= article.user.nickname %>
         </div>

@@ -8,9 +8,9 @@
       <%= link_to user_path(@talk.user) do %>
         <div class="post-show-name">
           <% if @talk.user.image.present? %>
-            <%= image_tag @talk.user.image, class: "post-user-icon" %>
+            <%= image_tag @talk.user.image, class: "user-icon" %>
           <% else %>
-            <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+            <%= image_tag "noimage-user.png", class: "user-icon" %>
           <% end %>
           <%= @talk.user.nickname %>
         </div>
@@ -55,9 +55,9 @@
         <%= link_to user_path(response.user) do %>
           <div class="post-show-name">
             <% if response.user.image.present? %>
-              <%= image_tag response.user.image, class: "post-user-icon" %>
+              <%= image_tag response.user.image, class: "user-icon" %>
             <% else %>
-              <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+              <%= image_tag "noimage-user.png", class: "user-icon" %>
             <% end %>
             <%= response.user.nickname %>
           </div>

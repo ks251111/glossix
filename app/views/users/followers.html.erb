@@ -4,11 +4,11 @@
     <div class="follow-list">
       <% @users.each do |user| %>
         <%= link_to user_path(user.id) do %>
-          <div class="post-name">
+          <div class="user-name">
             <% if user.image.present? %>
-              <%= image_tag user.image, class: "post-user-icon" %>
+              <%= image_tag user.image, class: "user-icon" %>
             <% else %>
-              <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+              <%= image_tag "noimage-user.png", class: "user-icon" %>
             <% end %>
             <%= user.nickname %>
           </div>

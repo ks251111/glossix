@@ -3,9 +3,9 @@
   <div class="profile">
     <div class="user-info">
       <% if @user.image.present? %>
-        <%= image_tag @user.image, class: "user-icon" %>
+        <%= image_tag @user.image, class: "user-image" %>
       <% else %>
-        <%= image_tag "noimage-user.png", class: "user-icon" %>
+        <%= image_tag "noimage-user.png", class: "user-image" %>
       <% end %>
       <div class="user-edit">
         <% if user_signed_in? && current_user.id == @user.id %>
@@ -48,11 +48,11 @@
             <div class="article-text">
               <%= like.article.text.truncate(20) %>
             </div>
-            <div class="post-name">
+            <div class="user-name">
               <% if like.article.user.image.present? %>
-                <%= image_tag like.article.user.image, class: "post-user-icon" %>
+                <%= image_tag like.article.user.image, class: "user-icon" %>
               <% else %>
-                <%= image_tag "noimage-user.png", class: "post-user-icon" %>
+                <%= image_tag "noimage-user.png", class: "user-icon" %>
               <% end %>
               <%= like.article.user.nickname %>
             </div>
