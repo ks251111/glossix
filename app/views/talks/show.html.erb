@@ -4,9 +4,18 @@
       <div class="talk-show-title">
         <h2><%= @talk.title %></h2>
       </div>
-      <div class="talk-show-name">
-        <%= link_to "投稿者：#{@talk.user.nickname}", user_path(@talk.user) %>
-      </div>
+
+      <%= link_to user_path(@talk.user) do %>
+        <div class="post-show-name">
+          <% if @talk.user.image.present? %>
+            <%= image_tag @talk.user.image, class: "user-icon" %>
+          <% else %>
+            <%= image_tag "noimage-user.png", class: "user-icon" %>
+          <% end %>
+          <%= @talk.user.nickname %>
+        </div>
+      <% end %>
+
       <div class="talk-show-text">
         <%= simple_format(@talk.text) %>
       </div>
@@ -43,9 +52,17 @@
     <div class="comment-list">
     <% @responses.each do |response| %>
       <div class="comment-mdl-list">
-        <div class="comment-name">
-          <strong><%= link_to response.user.nickname, user_path(response.user) %></strong>
-        </div>
+        <%= link_to user_path(response.user) do %>
+          <div class="post-show-name">
+            <% if response.user.image.present? %>
+              <%= image_tag response.user.image, class: "user-icon" %>
+            <% else %>
+              <%= image_tag "noimage-user.png", class: "user-icon" %>
+            <% end %>
+            <%= response.user.nickname %>
+          </div>
+        <% end %>
+
         <div class="comment-text">
           <%= simple_format(response.text) %>
         </div>

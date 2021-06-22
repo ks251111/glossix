@@ -21,8 +21,13 @@
             <%= talk.text.truncate(50) %>
           </div>
           <div class="talk-bottom">
-            <div class="talk-name">
-              <%= "投稿者：#{talk.user.nickname}" %>
+            <div class="user-name">
+              <% if talk.user.image.present? %>
+                <%= image_tag talk.user.image, class: "user-icon" %>
+              <% else %>
+                <%= image_tag "noimage-user.png", class: "user-icon" %>
+              <% end %>
+              <%= talk.user.nickname %>
             </div>
             <div class="talk-date">
               <%= l talk.created_at, format: :short %>

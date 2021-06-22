@@ -20,13 +20,13 @@ ul,li {
  }
  
 a {
-  color: black;
+  color: #333;
   text-decoration: none;
 }
 
 /* ヘッダー */
 .header {
-  padding: 0 100px;
+  padding: 0 150px;
   position: fixed;
   background-color: #ffffff;
   top: 0;
@@ -43,8 +43,16 @@ a {
   padding: 10px 0;
 }
 
+.nav_left {
+  display: flex;
+}
+
 .logo {
   width: 200px;
+}
+
+.search-form {
+  margin-top: 4px;
 }
 
 .search-form-field {
@@ -76,8 +84,72 @@ a {
   list-style: none;
 }
 
-.nav_right a {
+.nav_right {
+  display: flex;
+  align-items: center;
+}
+
+.login-status {
+  display: flex;
+  align-items: center;
+}
+
+.login-status .user-name:hover {
+  cursor: pointer;
+}
+
+.login-name {
+  margin-right: 5px;
+}
+
+.login-menu {
+  list-style: none;
+  background-color: white;
+  position: absolute;
+  top: 55px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.login-menu a {
+  padding: 10px;
+  display: block;
+}
+
+.login-menu li {
+  border-bottom: 1px solid lightgray;
+}
+
+.login-menu a:hover {
+  background-color: pink;
+}
+
+.logout-menu a {
   margin-left: 10px;
+}
+
+.post-btn a {
+  color: white;
+  font-weight: bold;
+  background-color: #f17dae;
+  display: block;
+  width: 130px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #f17dae;
+  margin-left: 15px;
+}
+
+.post-btn a:hover {
+  color: white;
+  background-color: pink;
+}
+
+.bottom-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 #lists {
@@ -85,11 +157,13 @@ a {
   padding: 10px;
   border: 1px solid lightgray;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 #lists:hover {
   color: white;
   border: 1px solid #f17dae;
+  cursor: pointer;
 }
 
 .hidden {
@@ -124,34 +198,13 @@ a {
   text-align: center;
   border: 1px solid lightgray;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .q-link a:hover {
   color: white;
   background-color: pink;
   border: 1px solid #f17dae;
-}
-
-.bottom-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.post-btn a {
-  color: white;
-  background-color: #f17dae;
-  display: block;
-  width: 130px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 5px;
-  border: 1px solid #f17dae;
-}
-
-.post-btn a:hover {
-  color: white;
-  background-color: pink;
 }
 
 /* フッター */
@@ -165,7 +218,7 @@ a {
   font-size: 10px;
 }
 
-/* 全ページ共通 */
+/* 共通部分 */
 .container {
   margin: 20px 100px;
 }
@@ -175,8 +228,21 @@ a {
 }
 
 .breadcrumb {
-  margin-left: 100px;
+  margin-left: 150px;
   margin-top: 115px;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 /* トップページ */
@@ -185,9 +251,10 @@ a {
 }
 
 .article-img {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   object-fit: contain;
+  margin-right: 30px;
 }
 
 .article-contents {
@@ -200,15 +267,32 @@ a {
   display: block;
   content: "";
   width: 500px;
+  margin: 30px;
 }
 
 .article-list {
   width: 500px;
+  padding-right: 50px;
+  margin: 30px;
 }
 
 .article-mdl-list {
   display: flex;
   align-items: center;
+}
+
+.article-info {
+  width: 270px;
+}
+
+.article-text {
+  margin-bottom: 10px;
+}
+
+.article-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 /* 記事詳細ページ */
@@ -227,7 +311,9 @@ a {
   object-fit: contain;
 }
 
-.article-show-name {
+.post-show-name {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid lightgray;
   padding: 10px 0;
 }
@@ -314,6 +400,7 @@ a {
 
 .send-btn {
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   border: 1px solid #f17dae;
   height: 30px;
@@ -330,10 +417,11 @@ a {
 }
 
 /* ユーザー詳細ページ */
-.user-icon {
+.user-image {
   height: 200px;
   width: 200px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .profile {
@@ -349,6 +437,7 @@ a {
   height: 40px;
   width: 110px;
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   border: 1px solid #f17dae;
   border-radius: 50px;
@@ -372,6 +461,7 @@ a {
 /* Q＆Aトップページ */
 .q-btn {
   color: white;
+  font-weight: bold;
   background-color: #f17dae;
   display: block;
   width: 130px;
@@ -405,9 +495,17 @@ a {
   padding: 10px;
 }
 
+.talk-text {
+  margin-bottom: 10px;
+}
+
 .talk-bottom {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+.talk-date {
   color: gray;
 }
 
@@ -425,11 +523,6 @@ a {
 
 .talk-show-title {
   border-bottom: 1px solid lightgray;
-}
-
-.talk-show-name {
-  border-bottom: 1px solid lightgray;
-  padding: 10px 0;
 }
 
 .talk-show-text {

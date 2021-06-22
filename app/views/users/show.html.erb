@@ -3,15 +3,10 @@
   <div class="profile">
     <div class="user-info">
       <% if @user.image.present? %>
-        <%= image_tag @user.image, class: "user-icon" %>
+        <%= image_tag @user.image, class: "user-image" %>
       <% else %>
-        <%= image_tag "noimage.jpg", class: "user-icon" %>
+        <%= image_tag "noimage-user.png", class: "user-image" %>
       <% end %>
-      <div class="user-edit">
-        <% if user_signed_in? && current_user.id == @user.id %>
-          <%= link_to "登録情報の編集", edit_user_registration_path(@user.id) %>
-        <% end %>
-      </div>
     </div>
 
     <div id="relationship_<%= @user.id %>">
@@ -21,13 +16,13 @@
   </div>
   <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
   <div class="article-contents">
-    <% @user.articles.each do |article| %>
+    <% @user.articles.reverse_each do |article| %>
     <%= render partial: "layouts/article", locals: { article: article } %>
     <% end %>
   </div>
   <h2 class="title"><%= @user.nickname %>さんのいいねした記事一覧</h2>
   <div class="article-contents">
-    <% @user.likes.each do |like| %>
+    <% @user.likes.reverse_each do |like| %>
       <div class="article-list">
         <%= link_to article_path(like.article.id) do %>
         <div class="article-mdl-list">
@@ -48,8 +43,13 @@
             <div class="article-text">
               <%= like.article.text.truncate(20) %>
             </div>
-            <div class="article-name">
-              <%= "投稿者：#{like.article.user.nickname}" %>
+            <div class="user-name">
+              <% if like.article.user.image.present? %>
+                <%= image_tag like.article.user.image, class: "user-icon" %>
+              <% else %>
+                <%= image_tag "noimage-user.png", class: "user-icon" %>
+              <% end %>
+              <%= like.article.user.nickname %>
             </div>
           </div>
         </div>

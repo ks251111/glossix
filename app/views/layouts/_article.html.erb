@@ -7,19 +7,30 @@
         <%= image_tag image, class: "article-img" %>
       <% end %>
     <% else %>
-      <%= image_tag "noimage.jpg", class: "article-img" %>
+      <%= image_tag "noimage.jpeg", class: "article-img" %>
     <% end %>
     </div>
   
     <div class="article-info">
       <h3 class="article-title">
-        <%= article.title %>
+        <%= article.title.truncate(17) %>
       </h3>
       <div class="article-text">
         <%= article.text.truncate(20) %>
       </div>
-      <div class="article-name">
-        <%= "投稿者：#{article.user.nickname}" %>
+      <div class="article-bottom">
+        <div class="user-name">
+          <% if article.user.image.present? %>
+            <%= image_tag article.user.image, class: "user-icon" %>
+          <% else %>
+            <%= image_tag "noimage-user.png", class: "user-icon" %>
+          <% end %>
+          <%= article.user.nickname %>
+        </div>
+        <div class="article-like">
+          <i class="fa fa-heart like-btn"></i>
+          <%= article.likes.count %>
+        </div>
       </div>
     </div>
   </div>
