@@ -98,6 +98,10 @@ a {
   cursor: pointer;
 }
 
+.login-name {
+  margin-right: 5px;
+}
+
 .login-menu {
   list-style: none;
   background-color: white;
@@ -134,7 +138,7 @@ a {
   text-align: center;
   border-radius: 5px;
   border: 1px solid #f17dae;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .post-btn a:hover {

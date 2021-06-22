@@ -39,7 +39,10 @@
                 <% else %>
                   <%= image_tag "noimage-user.png", class: "user-icon" %>
                 <% end %>
-                <%= current_user.nickname %>
+                <div class="login-name">
+                  <%= current_user.nickname %>
+                </div>
+                <i class="fas fa-chevron-down"></i>
               </div>
 
               <ul class="login-menu hidden" id="login-menu">
