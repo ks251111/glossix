@@ -295,6 +295,10 @@ a {
   align-items: flex-end;
 }
 
+.pagination{
+  text-align: center;
+}
+
 /* 記事詳細ページ */
 .article-show-contents {
   display: flex;
