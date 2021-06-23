@@ -43,13 +43,19 @@
             <div class="article-text">
               <%= like.article.text.truncate(19) %>
             </div>
-            <div class="user-name">
-              <% if like.article.user.image.present? %>
-                <%= image_tag like.article.user.image, class: "user-icon" %>
-              <% else %>
-                <%= image_tag "noimage-user.png", class: "user-icon" %>
-              <% end %>
-              <%= like.article.user.nickname %>
+            <div class="article-bottom">
+              <div class="user-name">
+                <% if like.article.user.image.present? %>
+                  <%= image_tag like.article.user.image, class: "user-icon" %>
+                <% else %>
+                  <%= image_tag "noimage-user.png", class: "user-icon" %>
+                <% end %>
+                <%= like.article.user.nickname %>
+              </div>
+              <div class="article-like">
+                <i class="fa fa-heart like-btn"></i>
+                <%= like.article.likes.count %>
+              </div>
             </div>
           </div>
         </div>
