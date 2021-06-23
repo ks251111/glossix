@@ -420,6 +420,11 @@ a {
   cursor: pointer;
 }
 
+/* カテゴリー一覧 */
+.no-article {
+  text-align: center;
+}
+
 /* ユーザー詳細ページ */
 .user-image {
   height: 200px;
