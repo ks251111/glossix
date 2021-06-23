@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.includes(:user).order('created_at DESC')
+    @articles = Article.includes(:user).order('created_at DESC').page(params[:page]).per(10)
   end
 
   def new

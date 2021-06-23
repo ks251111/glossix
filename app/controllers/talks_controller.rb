@@ -4,7 +4,7 @@ class TalksController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @talks = Talk.order("created_at DESC")
+    @talks = Talk.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
