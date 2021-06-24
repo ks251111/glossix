@@ -39,7 +39,7 @@ RSpec.describe "Talks", type: :request do
     end
     it 'showアクションにリクエストするとレスポンスにコメント一覧が存在する' do
       get talk_path(@talk)
-      expect(response.body).to include('コメント一覧')
+      expect(response.body).to include('回答一覧')
     end
   end
 end
