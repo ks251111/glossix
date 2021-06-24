@@ -14,6 +14,10 @@ RSpec.describe "Talks", type: :request do
       get talks_path
       expect(response.body).to include(@talk.title)
     end
+    it 'indexアクションにリクエストするとレスポンスに投稿済みのスレッドの本文が存在する' do
+      get talks_path
+      expect(response.body).to include(@talk.text)
+    end
   end
 
   describe 'GET #show' do
@@ -33,13 +37,13 @@ RSpec.describe "Talks", type: :request do
       get talk_path(@talk)
       expect(response.body).to include(@talk.text)
     end
-    it 'showアクションにリクエストするとレスポンスにコメントフォームが存在する' do
+    it 'showアクションにリクエストするとレスポンスに回答フォームが存在する' do
       get talk_path(@talk)
       expect(response.body).to include('comment-form')
     end
-    it 'showアクションにリクエストするとレスポンスにコメント一覧が存在する' do
+    it 'showアクションにリクエストするとレスポンスに回答一覧が存在する' do
       get talk_path(@talk)
-      expect(response.body).to include('コメント一覧')
+      expect(response.body).to include('回答一覧')
     end
   end
 end
