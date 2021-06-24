@@ -50,7 +50,7 @@ RSpec.describe '掲示板詳細', type: :system do
     @talk = FactoryBot.create(:talk)
   end
   
-  it 'ログインしたユーザーは掲示板詳細ページに遷移してコメント投稿欄が表示される' do
+  it 'ログインしたユーザーは掲示板詳細ページに遷移して回答用のフォームが表示される' do
     # ログインする
     sign_in(@talk.user)
     # 掲示板のトップページに移動する
@@ -60,11 +60,11 @@ RSpec.describe '掲示板詳細', type: :system do
     # 詳細ページにスレッドの内容が含まれている
     expect(page).to have_content("#{@talk.title}")
     expect(page).to have_content("#{@talk.text}")
-    # コメント用のフォームが存在する
+    # 回答用のフォームが存在する
     expect(page).to have_selector 'form'
   end
 
-  it 'ログインしていない状態で掲示板詳細ページに遷移できるもののコメント投稿欄が表示されない' do
+  it 'ログインしていない状態で掲示板詳細ページに遷移できるものの回答用のフォームが表示されない' do
     # 掲示板のトップページに移動する
     visit talks_path
     # スレッドの詳細ページに遷移する
@@ -72,7 +72,7 @@ RSpec.describe '掲示板詳細', type: :system do
     # 詳細ページにスレッドの内容が含まれている
     expect(page).to have_content("#{@talk.title}")
     expect(page).to have_content("#{@talk.text}")
-    # 「コメントの投稿には新規登録/ログインが必要です」が表示されていることを確認する
+    # 「回答には新規登録/ログインが必要です」が表示されていることを確認する
     expect(page).to have_content '回答には新規登録/ログインが必要です'
   end
 end
