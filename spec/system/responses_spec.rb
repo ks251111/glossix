@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe '掲示板コメント機能', type: :system do
+RSpec.describe '掲示板回答機能', type: :system do
   before do
     @talk = FactoryBot.create(:talk)
     @response1 = Faker::Lorem.sentence
@@ -15,7 +15,7 @@ RSpec.describe '掲示板コメント機能', type: :system do
     visit talk_path(@talk)
     # フォームに情報を入力する
     fill_in 'response_text', with: @response1
-    # コメントを送信すると、Responseモデルのカウントが1上がることを確認する
+    # 回答を送信すると、Responseモデルのカウントが1上がることを確認する
     expect do
       click_button "回答する"
     end.to change(Response, :count).by(1)
