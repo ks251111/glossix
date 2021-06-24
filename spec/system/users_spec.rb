@@ -17,7 +17,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'ニックネーム', with: @user.nickname
       fill_in 'メールアドレス', with: @user.email
       fill_in 'パスワード', with: @user.password
-      fill_in 'パスワード(確認)', with: @user.password_confirmation
+      fill_in 'パスワード（確認用）', with: @user.password_confirmation
       # 添付する画像を定義する
       image_path = Rails.root.join('public/images/test_image.png')
       # 画像選択フォームに画像を添付する
@@ -43,7 +43,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'ニックネーム', with: ''
       fill_in 'メールアドレス', with: ''
       fill_in 'パスワード', with: ''
-      fill_in 'パスワード(確認)', with: ''
+      fill_in 'パスワード（確認用）', with: ''
       # サインアップボタンを押してもユーザーモデルのカウントは上がらないことを確認する
       expect do
         click_button "登録する"
@@ -100,20 +100,19 @@ end
 
 RSpec.describe 'ユーザー情報編集', type: :system do
   before do
-    @user1 = FactoryBot.create(:user)
-    @user2 = FactoryBot.create(:user)
+    @user = FactoryBot.create(:user)
   end
 
   context 'ユーザー情報の編集ができるとき' do
     it 'ログインしたユーザーは自分のユーザー情報の編集ができる' do
       # user1でログインする
-      sign_in(@user1)
-      # user1のユーザー詳細ページへ移動する
-      visit user_path(@user1)
+      sign_in(@user)
+      # ヘッダーにあるユーザー名のボタンをクリックする
+      find('#login-menus').click
       # ユーザー詳細ページに登録情報の編集へのリンクがあることを確認する
-      expect(page).to have_link '登録情報の編集', href: edit_user_registration_path(@user1)
+      expect(page).to have_link '登録情報の編集', href: edit_user_registration_path(@user)
       # ユーザー情報編集ページへ移動する
-      visit edit_user_registration_path(@user1)
+      visit edit_user_registration_path(@user)
       # 添付する画像を定義する
       image_path = Rails.root.join('public/images/test_image2.png')
       # 画像選択フォームに画像を添付する
@@ -121,40 +120,17 @@ RSpec.describe 'ユーザー情報編集', type: :system do
       # ユーザー情報を編集する
       fill_in 'ニックネーム', with: 'テスト'
       fill_in 'メールアドレス', with: 'test@email'
-      # 新しいパスワードを入力する
-      fill_in '新しいパスワード', with: '111111'
-      fill_in '新しいパスワード(確認)', with: '111111'
-      # 現在のパスワードを入力する
-      fill_in '現在のパスワード', with: @user1.password
+      # パスワードを入力する
+      fill_in 'パスワード', with: '111111'
+      fill_in 'パスワード（確認用）', with: '111111'
       # 「変更する」ボタンを押す
       click_button '変更する'
-      # トップページに遷移したことを確認する
-      expect(current_path).to eq(root_path)
-      # user1のユーザー詳細ページに遷移する
-      visit user_path(@user1)
+      # ユーザー詳細ページに遷移したことを確認する
+      expect(current_path).to eq(user_path(@user))
       # 編集した内容が反映されていることを確認する(ニックネーム)
       expect(page).to have_content('テスト')
       # 編集した内容が反映されていることを確認する(画像)
       expect(page).to have_selector('img')
-    end
-  end
-
-  context 'ユーザー情報の編集ができないとき' do
-    it 'ログインしたユーザーは自分以外のユーザー情報編集画面に遷移できない' do
-      # user1でログインする
-      sign_in(@user1)
-      # user2のユーザー詳細ページへ遷移する
-      visit edit_user_registration_path(@user2)
-      # ユーザー詳細ページに登録情報の編集へのリンクがないことを確認する
-      expect(page).to have_no_link '登録情報の編集', href: edit_user_registration_path(@user2)
-    end
-    it 'ログインしていないとユーザー情報編集画面に遷移できない' do
-      # トップページにいる
-      visit root_path
-      # user1のユーザー詳細ページへ遷移する
-      visit edit_user_registration_path(@user1)
-      # ユーザー詳細ページに登録情報の編集へのリンクがないことを確認する
-      expect(page).to have_no_link '登録情報の編集', href: edit_user_registration_path(@user1)
     end
   end
 end
