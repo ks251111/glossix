@@ -580,6 +580,23 @@ a {
 /* スマホ表示 */
 @media screen and (max-width:600px) {
 
+  /* ヘッダー */
+  .header {
+    padding: 0 10px;
+  }
+  
+  .logo {
+    display: none;
+  }
+
+  .nav_right {
+    display: none;
+  }
+
+  .container {
+    margin: auto;
+  }
+  
   /* 記事一覧 */
 
   .article-mdl-list {
