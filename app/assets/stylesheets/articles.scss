@@ -19,3 +19,18 @@
 .service-text {
   font-size: 3vh;
 }
+
+/* スマホ表示 */
+@media screen and (max-width:600px) {
+  .title-contents {
+    padding: 3vh;
+  }
+
+  .service-title {
+    font-size: 5vh;
+  }
+
+  .service-text {
+    font-size: 2vh;
+  }
+}
