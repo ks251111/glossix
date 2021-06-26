@@ -633,6 +633,11 @@ a {
     width: 300px;
   }
 
+  /* Q&Aトップページ */
+  .talk-mdl-list {
+    width: 300px;
+  }
+
   /* Q＆A詳細ページ */
   .talk-show-contents {
     width: 300px;
