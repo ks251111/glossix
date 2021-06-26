@@ -267,13 +267,15 @@ a {
   display: block;
   content: "";
   width: 500px;
-  margin: 30px;
+  margin: 20px;
 }
 
 .article-list {
   width: 500px;
-  padding-right: 50px;
-  margin: 30px;
+  padding: 20px 40px;
+  margin: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 }
 
 .article-mdl-list {
