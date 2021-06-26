@@ -632,4 +632,10 @@ a {
   .form-long-text {
     width: 300px;
   }
+
+  /* Q＆A詳細ページ */
+  .talk-show-contents {
+    width: 300px;
+    margin-top: 20px;
+  }
 }
