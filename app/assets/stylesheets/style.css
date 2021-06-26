@@ -593,8 +593,14 @@ a {
     display: none;
   }
 
+  /* 共通部分 */
   .container {
     margin: auto;
+  }
+
+  .breadcrumb {
+    margin-left: 10px;
+    margin-top: 115px;
   }
   
   /* 記事一覧 */
