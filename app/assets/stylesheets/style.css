@@ -576,3 +576,19 @@ a {
 .comment-date {
   text-align: right;
 }
+
+/* スマホ表示 */
+@media screen and (max-width:600px) {
+
+  /* 記事一覧 */
+
+  .article-mdl-list {
+    flex-direction: column;
+  }
+
+  .article-img {
+    margin: 0;
+    height: 200px;
+    width: 200px;
+  }
+}
