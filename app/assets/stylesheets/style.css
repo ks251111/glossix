@@ -577,16 +577,19 @@ a {
   text-align: right;
 }
 
+/* PC表示 */
+@media (min-width:600px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
 /* スマホ表示 */
 @media screen and (max-width:600px) {
 
   /* ヘッダー */
   .header {
     padding: 0 10px;
-  }
-  
-  .logo {
-    display: none;
   }
 
   .login-status {
@@ -597,8 +600,50 @@ a {
     display: none;
   }
 
+  .search-form {
+    display: none;
+  }
+
   .search-form-field {
     width: 250px;
+  }
+
+  /* ハンバーガーメニュー */
+  .main-nav {
+    list-style: none;
+    width: 0;
+    position: absolute;
+    z-index: 2;
+    top: 115px;
+    right: 0;
+    overflow: hidden;
+    transition: .5s;
+    background-color: #ffffff;
+  }
+
+  .main-nav.open-menu {
+    width: 100%;
+  }
+
+  .main-nav li {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .main-nav a {
+    display: block;
+  }
+
+  .btn-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+  }
+
+  .mobile-search-form {
+    text-align: center;
   }
 
   /* 共通部分 */
