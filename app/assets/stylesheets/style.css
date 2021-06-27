@@ -682,7 +682,15 @@ a {
   }
 
   /* フォーム */
+  .form-text {
+    width: 300px;
+  }
+
   .form-long-text {
+    width: 300px;
+  }
+
+  .form-title-text {
     width: 300px;
   }
 
