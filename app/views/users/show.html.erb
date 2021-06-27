@@ -20,7 +20,7 @@
     <li><%= link_to "いいね", "#user-like" %></li>
   </ul>
 
-  <div id="user-article" class="area">
+  <div id="user-article" class="area is-active">
     <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
     <div class="article-contents">
       <% @user.articles.reverse_each do |article| %>
