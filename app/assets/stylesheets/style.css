@@ -589,8 +589,16 @@ a {
     display: none;
   }
 
-  .nav_right {
+  .login-status {
     display: none;
+  }
+
+  .post-btn {
+    display: none;
+  }
+
+  .search-form-field {
+    width: 250px;
   }
 
   /* 共通部分 */
