@@ -698,7 +698,7 @@ a {
 
   /* 共通部分 */
   .container {
-    margin: auto;
+    margin: 0 10px;
   }
 
   .breadcrumb {
@@ -753,5 +753,10 @@ a {
   .talk-show-contents {
     width: 300px;
     margin-top: 20px;
+  }
+
+  /* ユーザー詳細ページ */
+  .tab {
+    margin-top: 10%;
   }
 }
