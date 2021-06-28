@@ -696,6 +696,39 @@ a {
     text-align: center;
   }
 
+  /* アコーディオンパネル */
+  .accordion {
+    position: relative;
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+
+  .accordion::before,
+  .accordion::after {
+    position: absolute;
+    content: '';
+  }
+
+  .accordion::before {
+    transform: rotate(0deg);
+  }
+
+  .accordion::after {
+    transform: rotate(90deg);
+  }
+
+  .accordion.close::before {
+    transform: rotate(45deg);
+  }
+
+  .accordion.close::after {
+    transform: rotate(-45deg);
+  }
+
+  .box {
+    display: none;
+  }
+
   /* 共通部分 */
   .container {
     margin: 0 10px;
