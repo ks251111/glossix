@@ -14,54 +14,65 @@
     </div>
 
   </div>
-  <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
-  <div class="article-contents">
-    <% @user.articles.reverse_each do |article| %>
-    <%= render partial: "layouts/article", locals: { article: article } %>
-    <% end %>
-  </div>
-  <h2 class="title"><%= @user.nickname %>さんのいいねした記事一覧</h2>
-  <div class="article-contents">
-    <% @user.likes.reverse_each do |like| %>
-      <div class="article-list">
-        <%= link_to article_path(like.article.id) do %>
-        <div class="article-mdl-list">
-          <div class="article-image">
-            <% if like.article.images.present? %>
-              <% like.article.images.first(1).each do |image| %>
-                <%= image_tag image, class: "article-img" %>
-              <% end %>
-            <% else %>
-              <%= image_tag "noimage.jpg", class: "article-img" %>
-            <% end %>
-          </div>
 
-          <div class="article-info">
-            <h3 class="article-title">
-              <%= like.article.title.truncate(17) %>
-            </h3>
-            <div class="article-text">
-              <%= like.article.text.truncate(19) %>
-            </div>
-            <div class="article-bottom">
-              <div class="user-name">
-                <% if like.article.user.image.present? %>
-                  <%= image_tag like.article.user.image, class: "user-icon" %>
-                <% else %>
-                  <%= image_tag "noimage-user.png", class: "user-icon" %>
+  <ul class="tab">
+    <li><%= link_to "記事", "#user-article" %></li>
+    <li><%= link_to "いいね", "#user-like" %></li>
+  </ul>
+
+  <div id="user-article" class="area is-active">
+    <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
+    <div class="article-contents">
+      <% @user.articles.reverse_each do |article| %>
+        <%= render partial: "layouts/article", locals: { article: article } %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="user-like" class="area">
+    <h2 class="title"><%= @user.nickname %>さんのいいねした記事一覧</h2>
+    <div class="article-contents">
+      <% @user.likes.reverse_each do |like| %>
+        <div class="article-list">
+          <%= link_to article_path(like.article.id) do %>
+          <div class="article-mdl-list">
+            <div class="article-image">
+              <% if like.article.images.present? %>
+                <% like.article.images.first(1).each do |image| %>
+                  <%= image_tag image, class: "article-img" %>
                 <% end %>
-                <%= like.article.user.nickname %>
+              <% else %>
+                <%= image_tag "noimage.jpg", class: "article-img" %>
+              <% end %>
+            </div>
+
+            <div class="article-info">
+              <h3 class="article-title">
+                <%= like.article.title.truncate(17) %>
+              </h3>
+              <div class="article-text">
+                <%= like.article.text.truncate(19) %>
               </div>
-              <div class="article-like">
-                <i class="fa fa-heart like-btn"></i>
-                <%= like.article.likes.count %>
+              <div class="article-bottom">
+                <div class="user-name">
+                  <% if like.article.user.image.present? %>
+                    <%= image_tag like.article.user.image, class: "user-icon" %>
+                  <% else %>
+                    <%= image_tag "noimage-user.png", class: "user-icon" %>
+                  <% end %>
+                  <%= like.article.user.nickname %>
+                </div>
+                <div class="article-like">
+                  <i class="fa fa-heart like-btn"></i>
+                  <%= like.article.likes.count %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </div>    
-    <% end %>
+          <% end %>
+        </div>    
+      <% end %>
+    </div>
   </div>
 </div>
 

@@ -220,7 +220,7 @@ a {
 
 /* 共通部分 */
 .container {
-  margin: 20px 100px;
+  margin: 20px 150px;
 }
 
 .title {
@@ -461,6 +461,56 @@ a {
   cursor: pointer;
 }
 
+/* タブメニュー部分 */
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.tab li a {
+  display: block;
+  margin: 0 2px;
+  padding: 10px 20px;
+  background-color: #f17dae;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+}
+
+.tab li a:hover {
+  background-color: pink;
+}
+
+.tab li.active a {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.area {
+  display: none;
+  opacity: 0;
+  background-color: #ffffff;
+  padding: 50px 20px;
+}
+
+.area.is-active {
+  display: block;
+  animation-name: displayAnime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* フォロー・フォロワー一覧 */
 .follow {
   display: flex;
@@ -648,7 +698,7 @@ a {
 
   /* 共通部分 */
   .container {
-    margin: auto;
+    margin: 0 10px;
   }
 
   .breadcrumb {
@@ -703,5 +753,10 @@ a {
   .talk-show-contents {
     width: 300px;
     margin-top: 20px;
+  }
+
+  /* ユーザー詳細ページ */
+  .tab {
+    margin-top: 10%;
   }
 }
