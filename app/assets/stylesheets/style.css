@@ -703,15 +703,7 @@ a {
 
   /* アコーディオンパネル */
   .accordion {
-    position: relative;
     cursor: pointer;
-    transition: all .5s ease;
-  }
-
-  .accordion::before,
-  .accordion::after {
-    position: absolute;
-    content: '';
   }
 
   .accordion::before {
