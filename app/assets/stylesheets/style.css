@@ -640,6 +640,7 @@ a {
   /* ヘッダー */
   .header {
     padding: 0 10px;
+    height: 50px;
   }
 
   .login-status {
@@ -658,13 +659,17 @@ a {
     width: 250px;
   }
 
+  .bottom-header {
+    display: none;
+  }
+
   /* ハンバーガーメニュー */
   .main-nav {
     list-style: none;
     width: 0;
     position: absolute;
     z-index: 2;
-    top: 115px;
+    top: 50px;
     right: 0;
     overflow: hidden;
     transition: .5s;
