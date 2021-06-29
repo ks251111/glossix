@@ -712,6 +712,10 @@ a {
 
   .accordion::after {
     transform: rotate(90deg);
+    font-family: 'Font Awesome 5 Free';
+    content: '\f107';
+    font-weight: 900;
+    margin-left: 10px;
   }
 
   .accordion.close::before {
@@ -720,6 +724,7 @@ a {
 
   .accordion.close::after {
     transform: rotate(-45deg);
+    content: '\f106';
   }
 
   .box {
