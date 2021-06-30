@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.title-contents {
+.title-bg {
   background-image: image-url('top-image.jpeg');
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100% auto;
+}
+
+.title-contents {
   padding: 10vh;
+  text-align: center;
   color: black;
   text-shadow: 0 0 5px white;
   margin-top: 115px;
@@ -22,6 +27,10 @@
 
 /* スマホ表示 */
 @media screen and (max-width:600px) {
+  .title-bg {
+    background-attachment: unset;
+  }
+
   .title-contents {
     padding: 3vh;
     margin-top: 50px;
