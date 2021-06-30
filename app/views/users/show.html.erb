@@ -1,6 +1,6 @@
 <div class="container">
-  <h2 class="title"><%= @user.nickname %>さん</h2>
   <div class="profile">
+    <h2 class="title"><%= @user.nickname %>さん</h2>
     <div class="user-info">
       <% if @user.image.present? %>
         <%= image_tag @user.image, class: "user-image" %>
