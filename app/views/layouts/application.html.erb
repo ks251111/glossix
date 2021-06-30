@@ -75,6 +75,8 @@
                 <% end %>
               </div>
 
+              <li><%= link_to "TOP", root_path %></li>
+
               <%# ログイン状態 %>
               <% if user_signed_in? %>
                 <li><%= link_to "記事を投稿する", new_article_path %></li>
@@ -86,6 +88,20 @@
                 <li><%= link_to "新規登録", new_user_registration_path %></li>
                 <li><%= link_to "ログイン", new_user_session_path %></li>
               <% end %>
+
+              <ul class="accordion-area">
+                <li class="accordion">カテゴリー</li>
+                <ul class="box">
+                  <li><%= link_to "メイク", "/categories/2" %></li>
+                  <li><%= link_to "スキンケア", "/categories/3" %></li>
+                  <li><%= link_to "ボディケア", "/categories/4" %></li>
+                  <li><%= link_to "ヘアケア・スタイリング", "/categories/5" %></li>
+                  <li><%= link_to "ネイル", "/categories/6" %></li>
+                  <li><%= link_to "その他", "/categories/7" %></li>
+                </ul>
+              </ul>
+
+              <li><%= link_to "Q＆A", talks_path %></li>
             </ul>
           </div>
         </div>

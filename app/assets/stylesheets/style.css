@@ -640,6 +640,7 @@ a {
   /* ヘッダー */
   .header {
     padding: 0 10px;
+    height: 50px;
   }
 
   .login-status {
@@ -658,13 +659,17 @@ a {
     width: 250px;
   }
 
+  .bottom-header {
+    display: none;
+  }
+
   /* ハンバーガーメニュー */
   .main-nav {
     list-style: none;
     width: 0;
     position: absolute;
     z-index: 2;
-    top: 115px;
+    top: 50px;
     right: 0;
     overflow: hidden;
     transition: .5s;
@@ -677,7 +682,7 @@ a {
 
   .main-nav li {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     border-bottom: 1px solid lightgray;
   }
 
@@ -696,6 +701,41 @@ a {
     text-align: center;
   }
 
+  /* アコーディオンパネル */
+  .accordion {
+    cursor: pointer;
+  }
+
+  .accordion::before {
+    transform: rotate(0deg);
+  }
+
+  .accordion::after {
+    transform: rotate(90deg);
+    font-family: 'Font Awesome 5 Free';
+    content: '\f107';
+    font-weight: 900;
+    margin-left: 10px;
+  }
+
+  .accordion.close::before {
+    transform: rotate(45deg);
+  }
+
+  .accordion.close::after {
+    transform: rotate(-45deg);
+    content: '\f106';
+  }
+
+  .box {
+    display: none;
+    background-color: #f3f3f3;
+  }
+
+  .box li {
+    border: none;
+  }
+
   /* 共通部分 */
   .container {
     margin: 0 10px;
@@ -703,7 +743,7 @@ a {
 
   .breadcrumb {
     margin-left: 10px;
-    margin-top: 115px;
+    margin-top: 50px;
   }
   
   /* 記事一覧 */
