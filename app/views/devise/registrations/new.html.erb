@@ -1,42 +1,43 @@
 <div class="container">
-  <h2 class="form-title">新規登録</h2>
-
   <div class="form">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-area">
+      <h2 class="form-title">新規登録</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :nickname, "ニックネーム" %><br />
-        <%= f.text_field :nickname, autofocus: true, class: "form-text" %>
-      </div>
+        <div class="field">
+          <%= f.label :nickname, "ニックネーム" %><br />
+          <%= f.text_field :nickname, autofocus: true, class: "form-text" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-text" %>
-      </div>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-text" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password, "パスワード" %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %>文字以上の半角英数字)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-text" %>
-      </div>
+        <div class="field">
+          <%= f.label :password, "パスワード" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %>文字以上の半角英数字)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-text" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, "パスワード（確認用）" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-text" %>
-      </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード（確認用）" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-text" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :image, "画像" %><br />
-        <%= f.file_field :image %>
-      </div>
+        <div class="field">
+          <%= f.label :image, "画像" %><br />
+          <%= f.file_field :image %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "登録する", class: "send-btn" %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= f.submit "登録する", class: "send-btn" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 <div class="container">
-  <h2 class="title">フォロワ一覧</h2>
   <div class="follow">
     <div class="follow-list">
+      <h2 class="title">フォロワ一覧</h2>
       <% @users.each do |user| %>
         <%= link_to user_path(user.id) do %>
           <div class="user-name">

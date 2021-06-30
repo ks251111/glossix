@@ -1,8 +1,7 @@
 <div class="container">
-  <h2 class="form-title">新規投稿</h2>
-  
-  <%= render partial: 'form', locals: { talk: @talk } %>
-
+  <div class="form">
+    <%= render partial: 'form', locals: { talk: @talk } %>
+  </div>
 </div>
 
 <% breadcrumb :new_talk %>
