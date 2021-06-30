@@ -729,6 +729,11 @@ a {
 
   .box {
     display: none;
+    background-color: #f3f3f3;
+  }
+
+  .box li {
+    border: none;
   }
 
   /* 共通部分 */
