@@ -1,35 +1,32 @@
-<div class="form-area">
-  <h2 class="form-title">新規投稿</h2>
-  <%= form_with(model: @article, local: true) do |f| %>
+<%= form_with(model: @article, local: true) do |f| %>
 
   <%= render 'layouts/error_messages', model: f.object %>
 
-    <div class="field">
-      <%= f.label :title, "タイトル" %><br />
-      <%= f.text_field :title, placeholder:"タイトル", class: "form-title-text" %>
-    </div>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, placeholder:"タイトル", class: "form-title-text" %>
+  </div>
 
-    <div class="field">
-      <%= f.label :text, "本文" %><br />
-      <%= f.text_area :text, placeholder:"本文", class: "form-long-text" %>
-    </div>
+  <div class="field">
+    <%= f.label :text, "本文" %><br />
+    <%= f.text_area :text, placeholder:"本文", class: "form-long-text" %>
+  </div>
 
-    <div class="field">
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"pulldown"}) %>
-    </div>
+  <div class="field">
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"pulldown"}) %>
+  </div>
 
-    <div class="field">
-      <%= f.label :image, "画像" %><br />
-      <%= f.file_field :images, name: 'article[images][]', id: 'article_image' %>
-      <div id="image-list"></div>
-    </div>
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :images, name: 'article[images][]', id: 'article_image' %>
+    <div id="image-list"></div>
+  </div>
 
-    <% @article.images.each do |image| %>
-      <%= image_tag image, class: 'images' %>
-    <% end %>
-
-    <div class="send">
-      <%= f.submit "投稿する", class: "send-btn" %>
-    </div>
+  <% @article.images.each do |image| %>
+    <%= image_tag image, class: 'images' %>
   <% end %>
-</div>
+
+  <div class="send">
+    <%= f.submit "投稿する", class: "send-btn" %>
+  </div>
+<% end %>

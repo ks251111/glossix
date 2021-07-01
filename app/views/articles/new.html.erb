@@ -1,6 +1,9 @@
 <div class="container">
   <div class="form">
-    <%= render partial: 'layouts/form', locals: { article: @article } %>
+    <div class="form-area">
+      <h2 class="form-title">新規投稿</h2>
+      <%= render partial: 'layouts/form', locals: { article: @article } %>
+    </div>
   </div>
 </div>
 
