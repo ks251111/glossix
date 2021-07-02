@@ -36,11 +36,6 @@
       <div class="talk-show-date">
         <%= l @talk.created_at, format: :short %>
       </div>
-
-      <% if user_signed_in? && current_user.id == @talk.user_id %>
-        <%= link_to "編集", edit_talk_path(@talk.id) %>
-        <%= link_to "削除", talk_path(@talk.id), method: :delete %>
-      <% end %>
     </div>
   </div>
 
