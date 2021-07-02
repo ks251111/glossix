@@ -4,6 +4,7 @@
       <div class="article-title">
         <h2><%= @article.title %></h2>
       </div>
+
       <div class="article-show-image">
         <div class="slider">
           <% if @article.images.present? %>
@@ -14,16 +15,30 @@
         </div>
       </div>
 
-      <%= link_to user_path(@article.user) do %>
-        <div class="post-show-name">
-          <% if @article.user.image.present? %>
-            <%= image_tag @article.user.image, class: "user-icon" %>
-          <% else %>
-            <%= image_tag "noimage-user.png", class: "user-icon" %>
+      <div class="post-user-menu">
+        <%= link_to user_path(@article.user) do %>
+          <div class="post-show-name">
+            <% if @article.user.image.present? %>
+              <%= image_tag @article.user.image, class: "user-icon" %>
+            <% else %>
+              <%= image_tag "noimage-user.png", class: "user-icon" %>
+            <% end %>
+            <%= @article.user.nickname %>
+          </div>
+        <% end %>
+
+        <div class="dropdown-menu">
+          <% if user_signed_in? && current_user.id == @article.user_id %>
+            <ul class="dropdown" id="dropdown">
+              <li><i class="fas fa-ellipsis-h"></i></li>
+            </ul>
+            <ul class="dropdown-list hidden" id="dropdown-list">
+              <li><%= link_to "編集", edit_article_path(@article.id) %></li>
+              <li><%= link_to "削除", article_path(@article.id), method: :delete %></li>
+            </ul>
           <% end %>
-          <%= @article.user.nickname %>
         </div>
-      <% end %>
+      </div>
 
       <div class="article-show-text">
         <%= simple_format(@article.text) %>
@@ -38,11 +53,6 @@
       <div class="favorite" id="article_<%= @article.id %>">
         <%= render 'article', article: @article %>
       </div>
-
-      <% if user_signed_in? && current_user.id == @article.user_id %>
-        <%= link_to "編集", edit_article_path(@article.id) %>
-        <%= link_to "削除", article_path(@article.id), method: :delete %>
-      <% end %>
     </div>
   </div>
 

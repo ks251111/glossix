@@ -321,10 +321,27 @@ a {
   object-fit: contain;
 }
 
+.post-user-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.dropdown {
+  list-style: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.dropdown-list {
+  list-style: none;
+  position: absolute;
+}
+
 .post-show-name {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid lightgray;
   padding: 10px 0;
 }
 

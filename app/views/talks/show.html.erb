@@ -5,16 +5,30 @@
         <h2><%= @talk.title %></h2>
       </div>
 
-      <%= link_to user_path(@talk.user) do %>
-        <div class="post-show-name">
-          <% if @talk.user.image.present? %>
-            <%= image_tag @talk.user.image, class: "user-icon" %>
-          <% else %>
-            <%= image_tag "noimage-user.png", class: "user-icon" %>
+      <div class="post-user-menu">
+        <%= link_to user_path(@talk.user) do %>
+          <div class="post-show-name">
+            <% if @talk.user.image.present? %>
+              <%= image_tag @talk.user.image, class: "user-icon" %>
+            <% else %>
+              <%= image_tag "noimage-user.png", class: "user-icon" %>
+            <% end %>
+            <%= @talk.user.nickname %>
+          </div>
+        <% end %>
+
+        <div class="dropdown-menu">
+          <% if user_signed_in? && current_user.id == @talk.user_id %>
+            <ul class="dropdown" id="dropdown">
+              <li><i class="fas fa-ellipsis-h"></i></li>
+            </ul>
+            <ul class="dropdown-list hidden" id="dropdown-list">
+              <li><%= link_to "編集", edit_talk_path(@talk.id) %></li>
+              <li><%= link_to "削除", talk_path(@talk.id), method: :delete %></li>
+            </ul>
           <% end %>
-          <%= @talk.user.nickname %>
         </div>
-      <% end %>
+      </div>
 
       <div class="talk-show-text">
         <%= simple_format(@talk.text) %>
