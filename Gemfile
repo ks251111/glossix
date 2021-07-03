@@ -67,3 +67,4 @@ gem 'font-awesome-sass'
 gem 'rails-i18n'
 gem 'gretel'
 gem 'kaminari'
+gem "aws-sdk-s3", require: false
