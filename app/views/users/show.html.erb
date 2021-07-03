@@ -1,6 +1,6 @@
 <div class="container">
-  <h2 class="title"><%= @user.nickname %>さん</h2>
   <div class="profile">
+    <h2 class="title"><%= @user.nickname %>さん</h2>
     <div class="user-info">
       <% if @user.image.present? %>
         <%= image_tag @user.image, class: "user-image" %>
@@ -48,7 +48,7 @@
 
             <div class="article-info">
               <h3 class="article-title">
-                <%= like.article.title.truncate(17) %>
+                <%= like.article.title.truncate(16) %>
               </h3>
               <div class="article-text">
                 <%= like.article.text.truncate(19) %>

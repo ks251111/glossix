@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   color: #333;
   margin: 0 auto;
+  background-color: #fef8fb;
 }
 h1,h2,h3,h4,h5,h6,p {
   padding: 10px 0;
@@ -229,7 +230,7 @@ a {
 
 .breadcrumb {
   margin-left: 150px;
-  margin-top: 115px;
+  margin-top: 130px;
 }
 
 .user-name {
@@ -274,8 +275,8 @@ a {
   width: 500px;
   padding: 20px 40px;
   margin: 20px;
-  border: 1px solid lightgray;
   border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .article-mdl-list {
@@ -309,6 +310,9 @@ a {
 
 .article-show-mdl-contents {
   width: 700px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .slider img {
@@ -317,11 +321,54 @@ a {
   object-fit: contain;
 }
 
+.post-user-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
 .post-show-name {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid lightgray;
   padding: 10px 0;
+}
+
+.dropdown {
+  list-style: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.dropdown li {
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.dropdown li:hover {
+  background-color: lightgray;
+}
+
+.dropdown-list {
+  list-style: none;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.dropdown-list li {
+  border-bottom: 1px solid lightgray;
+}
+
+.dropdown-list a {
+  display: block;
+  padding: 10px 20px;
+}
+
+.dropdown-list a:hover {
+  background-color: pink;
 }
 
 .article-show-text {
@@ -355,6 +402,17 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-area {
+  background-color: #ffffff;
+  width: 800px;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .field {
@@ -437,6 +495,10 @@ a {
 
 .profile {
   text-align: center;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 50px;
 }
 
 .user-info {
@@ -492,6 +554,7 @@ a {
   opacity: 0;
   background-color: #ffffff;
   padding: 50px 20px;
+  border-radius: 0 30px 30px 30px;
 }
 
 .area.is-active {
@@ -499,6 +562,10 @@ a {
   animation-name: displayAnime;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+}
+
+.area .article-list {
+  border: 1px solid lightgray;
 }
 
 @keyframes displayAnime {
@@ -517,6 +584,17 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.follow-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 700px;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 /* Q＆Aトップページ */
@@ -550,10 +628,11 @@ a {
 }
 
 .talk-mdl-list {
-  border: 1px solid lightgray;
+  background-color: #ffffff;
   width: 700px;
-  margin: 10px;
-  padding: 10px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .talk-text {
@@ -577,8 +656,9 @@ a {
 }
 
 .talk-show-contents {
-  border: 1px solid lightgray;
-  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
   width: 700px;
 }
 
@@ -608,10 +688,11 @@ a {
 }
 
 .comment-mdl-list {
-  border: 1px solid lightgray;
+  background-color: #ffffff;
+  border-radius: 30px;
   margin: 10px 0;
   width: 700px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .comment-name {

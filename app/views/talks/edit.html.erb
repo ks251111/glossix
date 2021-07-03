@@ -1,8 +1,10 @@
 <div class="container">
-  <h2 class="title">投稿の編集</h2>
-  
-  <%= render partial: 'form', locals: { talk: @talk } %>
-
+  <div class="form">
+    <div class="form-area">
+      <h2 class="form-title">投稿の編集</h2>
+      <%= render partial: 'form', locals: { talk: @talk } %>
+    </div>
+  </div>
 </div>
 
 <% breadcrumb :edit_talk, @talk %>

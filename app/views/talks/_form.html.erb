@@ -1,20 +1,18 @@
-<div class="form">
-  <%= form_with(model: @talk, local: true) do |f| %>
+<%= form_with(model: @talk, local: true) do |f| %>
 
   <%= render 'layouts/error_messages', model: f.object %>
 
-    <div class="field">
-      <%= f.label :title, "タイトル" %><br />
-      <%= f.text_field :title, placeholder:"タイトル", class: "form-title-text" %>
-    </div>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, placeholder:"タイトル", class: "form-title-text" %>
+  </div>
 
-    <div class="field">
-      <%= f.label :text, "本文" %><br />
-      <%= f.text_area :text, placeholder:"本文", class: "form-long-text" %>
-    </div>
+  <div class="field">
+    <%= f.label :text, "本文" %><br />
+    <%= f.text_area :text, placeholder:"本文", class: "form-long-text" %>
+  </div>
 
-    <div class="send">
-      <%= f.submit "投稿する", class: "send-btn" %>
-    </div>
-  <% end %>
-</div>
+  <div class="send">
+    <%= f.submit "投稿する", class: "send-btn" %>
+  </div>
+<% end %>
