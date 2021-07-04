@@ -25,6 +25,12 @@ a {
   text-decoration: none;
 }
 
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* ヘッダー */
 .header {
   padding: 0 150px;
@@ -212,6 +218,7 @@ a {
 .footer {
   background-color: lightgray;
   padding: 10px 0;
+  margin-top: auto;
 }
 
 .copyright {
