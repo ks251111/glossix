@@ -72,8 +72,8 @@ a {
 
 .search-btn {
   color: white;
-  background-color: #f17dae;
-  border: 1px solid #f17dae;
+  background-color: #e57dba;
+  border: 1px solid #e57dba;
   height: 30px;
   width: 30px;
   border-radius: 5px;
@@ -138,13 +138,13 @@ a {
 .post-btn a {
   color: white;
   font-weight: bold;
-  background-color: #f17dae;
+  background-color: #e57dba;
   display: block;
   width: 130px;
   line-height: 30px;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid #f17dae;
+  border: 1px solid #e57dba;
   margin-left: 15px;
 }
 
@@ -472,8 +472,8 @@ a {
 .send-btn {
   color: white;
   font-weight: bold;
-  background-color: #f17dae;
-  border: 1px solid #f17dae;
+  background-color: #e57dba;
+  border: 1px solid #e57dba;
   height: 30px;
   width: 70px;
   border-radius: 5px;
@@ -518,8 +518,8 @@ a {
   width: 110px;
   color: white;
   font-weight: bold;
-  background-color: #f17dae;
-  border: 1px solid #f17dae;
+  background-color: #e57dba;
+  border: 1px solid #e57dba;
   border-radius: 50px;
 }
 
@@ -541,7 +541,7 @@ a {
   display: block;
   margin: 0 2px;
   padding: 10px 20px;
-  background-color: #f17dae;
+  background-color: #e57dba;
   color: #ffffff;
   font-weight: bold;
   border-radius: 10px 10px 0 0;
@@ -608,13 +608,13 @@ a {
 .q-btn {
   color: white;
   font-weight: bold;
-  background-color: #f17dae;
+  background-color: #e57dba;
   display: block;
   width: 130px;
   line-height: 30px;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid #f17dae;
+  border: 1px solid #e57dba;
 }
 
 .q-btn:hover {
