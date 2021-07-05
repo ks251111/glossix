@@ -128,7 +128,8 @@ a {
 }
 
 .login-menu a:hover {
-  background-color: pink;
+  background-color: #e57dba;
+  color: #ffffff;
 }
 
 .logout-menu a {
@@ -196,7 +197,8 @@ a {
 }
 
 .category-lists a:hover {
-  background-color: pink;
+  background-color: #e57dba;
+  color: #ffffff;
 }
 
 .q-link a {
@@ -375,7 +377,8 @@ a {
 }
 
 .dropdown-list a:hover {
-  background-color: pink;
+  background-color: #e57dba;
+  color: #ffffff;
 }
 
 .article-show-text {
