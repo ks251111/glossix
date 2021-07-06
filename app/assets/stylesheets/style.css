@@ -132,6 +132,10 @@ a {
   color: #ffffff;
 }
 
+.login-menu span a:hover {
+  background-color: #cf0d7e;
+}
+
 .logout-menu a {
   margin-left: 10px;
 }
