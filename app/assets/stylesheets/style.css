@@ -81,8 +81,7 @@ a {
 
 .search-btn:hover {
   color: white;
-  background-color: pink;
-  border: 1px solid #f17dae;
+  background-color: #eb9ac9;
   cursor: pointer;
 }
 
@@ -155,7 +154,7 @@ a {
 
 .post-btn a:hover {
   color: white;
-  background-color: pink;
+  background-color: #eb9ac9;
 }
 
 .bottom-header {
@@ -489,8 +488,7 @@ a {
 
 .send-btn:hover {
   color: white;
-  background-color: pink;
-  border: 1px solid #f17dae;
+  background-color: #eb9ac9;
   cursor: pointer;
 }
 
@@ -532,8 +530,7 @@ a {
 
 .follow-btn:hover {
   color: white;
-  background-color: pink;
-  border: 1px solid #f17dae;
+  background-color: #eb9ac9;
   cursor: pointer;
 }
 
@@ -555,7 +552,7 @@ a {
 }
 
 .tab li a:hover {
-  background-color: pink;
+  background-color: #eb9ac9;
 }
 
 .tab li.active a {
@@ -626,7 +623,7 @@ a {
 
 .q-btn:hover {
   color: white;
-  background-color: pink;
+  background-color: #eb9ac9;
 }
 
 .talk-contents {
