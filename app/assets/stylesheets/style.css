@@ -725,6 +725,10 @@ a {
   .mobile-menu {
     display: none;
   }
+
+  .fixed-btn {
+    display: none;
+  }
 }
 
 /* スマホ表示 */
@@ -837,6 +841,21 @@ a {
   .breadcrumb {
     margin-left: 10px;
     margin-top: 50px;
+  }
+
+  .fixed-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 15px;
+    font-size: 30px;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #e57dba;
+  }
+  
+  .fa-pencil-alt {
+    color: #ffffff;
   }
   
   /* 記事一覧 */
