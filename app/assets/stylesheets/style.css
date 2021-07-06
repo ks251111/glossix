@@ -174,7 +174,7 @@ a {
 
 #lists:hover {
   color: white;
-  border: 1px solid #f17dae;
+  border: 1px solid #e57dba;
   cursor: pointer;
 }
 
@@ -216,8 +216,8 @@ a {
 
 .q-link a:hover {
   color: white;
-  background-color: pink;
-  border: 1px solid #f17dae;
+  background-color: #e57dba;
+  border: 1px solid #e57dba;
 }
 
 /* フッター */
