@@ -80,7 +80,6 @@
 
                 <%# ログイン状態 %>
                 <% if user_signed_in? %>
-                  <li><%= link_to "記事を投稿する", new_article_path %></li>
                   <li><%= link_to "マイページ", user_path(current_user) %></li>
                   <li><%= link_to "登録情報の編集", edit_user_registration_path(current_user.id) %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %></li>
