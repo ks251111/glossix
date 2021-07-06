@@ -4,6 +4,12 @@
       <%= render partial: "layouts/article", locals: { article: article } %>
     <% end %>
   </div>
+
+  <div class="fixed-btn">
+    <%= link_to new_article_path do %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+  </div>
 </div>
 
 <% breadcrumb :search_article %>

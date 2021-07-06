@@ -9,6 +9,12 @@
   <% else %>
     <p class="no-article">記事がありません</p>
   <% end %>
+
+  <div class="fixed-btn">
+    <%= link_to new_article_path do %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+  </div>
 </div>
 
 <% breadcrumb :category, @article %>
