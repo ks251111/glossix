@@ -916,4 +916,9 @@ a {
   .tab {
     margin-top: 10%;
   }
+
+  /* フォロー・フォロワー一覧 */
+  .follow-list {
+    width: 100%;
+  }
 }
