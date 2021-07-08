@@ -840,7 +840,7 @@ a {
 
   /* 共通部分 */
   .container {
-    margin: 0 10px;
+    margin: 10px 20px;
   }
 
   .breadcrumb {
