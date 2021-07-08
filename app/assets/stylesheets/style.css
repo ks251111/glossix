@@ -865,6 +865,12 @@ a {
   }
   
   /* 記事一覧 */
+  .article-index {
+    margin: 20px;
+  }
+  .article-list {
+    max-width: 100%;
+  }
 
   .article-mdl-list {
     flex-direction: column;
