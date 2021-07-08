@@ -609,6 +609,10 @@ a {
   padding: 20px;
 }
 
+.follow-list .user-name {
+  margin: 2px;
+}
+
 /* Q＆Aトップページ */
 .q-btn {
   color: white;
