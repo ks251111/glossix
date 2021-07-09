@@ -884,7 +884,7 @@ a {
 
   /* 記事詳細 */
   .article-show-mdl-contents {
-    width: 300px;
+    width: 335px;
   }
   .slider img {
     margin: 0 10px;
@@ -892,7 +892,7 @@ a {
 
   /* コメント一覧 */
   .comment-mdl-list {
-    width: 300px;
+    width: 335px;
   }
 
   /* フォーム */
@@ -908,6 +908,10 @@ a {
     width: 300px;
   }
 
+  .comment-form .form-long-text {
+    width: 335px;
+  }
+
   /* Q&Aトップページ */
   .talk-mdl-list {
     width: 300px;
@@ -915,7 +919,7 @@ a {
 
   /* Q＆A詳細ページ */
   .talk-show-contents {
-    width: 300px;
+    width: 335px;
     margin-top: 20px;
   }
 
