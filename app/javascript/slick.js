@@ -1,6 +1,6 @@
 $(function() {
   w = $(window).width();
-  if (w >= 600) {
+  if (w >= 1025) {
     $('.slider').slick({
       prevArrow: '<i class="fas fa-chevron-left"></i>',
       nextArrow: '<i class="fas fa-chevron-right"></i>',
