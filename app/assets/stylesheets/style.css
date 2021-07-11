@@ -947,4 +947,9 @@ a {
  .post-btn {
    display: none;
  }
+
+ /* 共通部分 */
+ .breadcrumb {
+   margin-left: 50px;
+ }
 }
