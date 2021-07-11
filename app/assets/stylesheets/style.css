@@ -753,6 +753,23 @@ a {
   }
 }
 
+/* タブレット表示 */
+@media screen and (max-width:1024px) {
+  /* ヘッダー */ 
+  .header {
+    padding: 0 50px;
+  }
+ 
+  .post-btn {
+    display: none;
+  }
+ 
+  /* 共通部分 */
+  .breadcrumb {
+    margin-left: 50px;
+  }
+}
+
 /* スマホ表示 */
 @media screen and (max-width:600px) {
 
@@ -937,19 +954,3 @@ a {
   }
 }
 
-/* タブレット表示 */
-@media screen and (max-width:1024px) {
- /* ヘッダー */ 
- .header {
-   padding: 0 50px;
- }
-
- .post-btn {
-   display: none;
- }
-
- /* 共通部分 */
- .breadcrumb {
-   margin-left: 50px;
- }
-}
