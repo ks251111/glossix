@@ -25,6 +25,13 @@
   font-size: 3vh;
 }
 
+/* タブレット表示 */
+@media screen and (max-width:1024px) {
+  .title-contents {
+    padding: 7vh;
+  }
+}
+
 /* スマホ表示 */
 @media screen and (max-width:600px) {
   .title-bg {
