@@ -768,6 +768,35 @@ a {
   .breadcrumb {
     margin-left: 50px;
   }
+
+  /* 記事一覧 */
+  .article-index {
+    margin: 20px;
+  }
+  .article-list {
+    width: 300px;
+  }
+
+  .article-mdl-list {
+    flex-direction: column;
+  }
+
+  .article-img {
+    margin: 0;
+    height: 200px;
+    width: 200px;
+  }
+
+  .article-info {
+    width: 250px;
+  }
+
+  .article-contents::after {
+    display: block;
+    content: "";
+    width: 300px;
+    margin: 20px;
+  }
 }
 
 /* スマホ表示 */
@@ -885,21 +914,13 @@ a {
   }
   
   /* 記事一覧 */
-  .article-index {
-    margin: 20px;
-  }
+
   .article-list {
     max-width: 100%;
   }
 
-  .article-mdl-list {
-    flex-direction: column;
-  }
-
-  .article-img {
-    margin: 0;
-    height: 200px;
-    width: 200px;
+  .article-info {
+    max-width: 100%;
   }
 
   /* 記事詳細 */
