@@ -801,6 +801,24 @@ a {
     width: 300px;
     margin: 20px;
   }
+
+  /* ユーザー詳細ページ */
+  .profile {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .tab {
+    margin: 0 30px;
+  }
+
+  #user-article {
+    margin: 0 30px;
+  }
+
+  #user-like {
+    margin: 0 30px;
+  }
 }
 
 /* スマホ表示 */
