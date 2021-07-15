@@ -25,6 +25,20 @@ https://nicecosme.herokuapp.com/
 しかし、そのアプリにはコスメのクチコミ情報はたくさんありますが、気軽に質問や悩みを相談できるようなスペースがないということに気が付きました。<br>
 そこで情報収集に加えてユーザー同士の交流もできるようなサービスを作りたいと思い、niceCOSMEの作成に至りました。
 
+# DEMO
+
+## トップページ（ログアウト状態）
+[![Image from Gyazo](https://i.gyazo.com/4009be4507453946bcf81d36b90c185c.png)](https://gyazo.com/4009be4507453946bcf81d36b90c185c)
+
+## トップページ（ログイン状態）
+[![Image from Gyazo](https://i.gyazo.com/4c737be64883a876f54b325f48084cf6.jpg)](https://gyazo.com/4c737be64883a876f54b325f48084cf6)
+
+## 新規登録
+[![Image from Gyazo](https://i.gyazo.com/da3845a6a57b7fd35185db8fa202f18b.gif)](https://gyazo.com/da3845a6a57b7fd35185db8fa202f18b)
+
+## ログイン
+[![Image from Gyazo](https://i.gyazo.com/64b078fc83b3da1923eb2487af27c67c.gif)](https://gyazo.com/64b078fc83b3da1923eb2487af27c67c)
+
 # 使用技術(開発環境)
 
 ## バックエンド
