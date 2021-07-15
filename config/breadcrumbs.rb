@@ -29,7 +29,7 @@ end
 
 crumb :edit_user do |user|
   link "登録情報の編集",  edit_user_registration_path(user)
-  parent :show_user, user
+  parent :root
 end
 
 crumb :new_article do
