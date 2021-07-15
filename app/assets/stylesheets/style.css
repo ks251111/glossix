@@ -728,9 +728,8 @@ a {
   padding: 20px;
 }
 
-.comment-name {
+.comment-lists .post-show-name {
   border-bottom: 1px solid lightgray;
-  padding-bottom: 10px;
 }
 
 .comment-text {
