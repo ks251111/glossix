@@ -977,7 +977,9 @@ a {
 
   /* Q&Aトップページ */
   .talk-mdl-list {
-    width: 300px;
+    width: 100%;
+    padding: 5%;
+    margin: 20px 0;
   }
 
   /* Q＆A詳細ページ */

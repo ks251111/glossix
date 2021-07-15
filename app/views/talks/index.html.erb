@@ -12,8 +12,8 @@
   <div class="talk-lists">
     <div class="talk-list">
     <% @talks.each do |talk| %>
-      <%= link_to talk_path(talk.id) do %>
-        <div class="talk-mdl-list">
+      <div class="talk-mdl-list">
+        <%= link_to talk_path(talk.id) do %>
           <h3 class="talk-title">
             <%= talk.title %>
           </h3>
@@ -33,8 +33,8 @@
               <%= l talk.created_at, format: :short %>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
     </div>
   </div>
