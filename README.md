@@ -29,6 +29,8 @@ https://nicecosme.herokuapp.com/
 
 ## トップページ（ログアウト状態）
 [![Image from Gyazo](https://i.gyazo.com/4009be4507453946bcf81d36b90c185c.png)](https://gyazo.com/4009be4507453946bcf81d36b90c185c)
+niceCOSMEのトップページです。<br>
+ログアウト状態の時は「新規登録」「ログイン」のリンクが表示されます。
 
 ## トップページ（ログイン状態）
 [![Image from Gyazo](https://i.gyazo.com/b4588193efdc0f8728284bd98eed563f.gif)](https://gyazo.com/b4588193efdc0f8728284bd98eed563f)
@@ -37,10 +39,13 @@ https://nicecosme.herokuapp.com/
 
 ## 新規登録
 [![Image from Gyazo](https://i.gyazo.com/da3845a6a57b7fd35185db8fa202f18b.gif)](https://gyazo.com/da3845a6a57b7fd35185db8fa202f18b)
+新規登録画面です。<br>
 画像がなくても登録でき、画像なしで登録した場合にはデフォルトのアイコンが設定されます。
 
 ## ログイン
 [![Image from Gyazo](https://i.gyazo.com/64b078fc83b3da1923eb2487af27c67c.gif)](https://gyazo.com/64b078fc83b3da1923eb2487af27c67c)
+ログイン画面です。<br>
+登録したメールアドレスとパスワードの入力でログインすることができます。
 
 ## ログアウト
 [![Image from Gyazo](https://i.gyazo.com/c6bf39f03b7ebdd0411fa69bcb03fd3b.gif)](https://gyazo.com/c6bf39f03b7ebdd0411fa69bcb03fd3b)
@@ -49,6 +54,7 @@ https://nicecosme.herokuapp.com/
 
 ## 記事投稿機能
 [![Image from Gyazo](https://i.gyazo.com/5899e5e2641669a34ac34fe21aa92567.gif)](https://gyazo.com/5899e5e2641669a34ac34fe21aa92567)
+記事投稿画面です。<br>
 画像はあってもなくても投稿できる仕様になっています。
 
 ## 画像プレビュー機能、複数枚画像投稿機能
@@ -57,6 +63,9 @@ https://nicecosme.herokuapp.com/
 
 ## 記事詳細ページ
 [![Image from Gyazo](https://i.gyazo.com/592d585a3a8bf38c2fda00e4d97b81ed.gif)](https://gyazo.com/592d585a3a8bf38c2fda00e4d97b81ed)
+トップページの記事をクリックすると記事詳細ページに遷移します。<br>
+記事のタイトル、画像があれば画像、投稿者のアイコンとユーザー名、本文。カテゴリー、いいねボタン、コメントフォーム、コメント一覧が表示されます。<br>
+投稿者本人の場合はユーザー名の右端に点々のマークが現れ、クリックすると「編集」「削除」のリンクが表示されます。
 
 ## スライドショー機能
 [![Image from Gyazo](https://i.gyazo.com/e619cbe9ee6b363146248880ad385b36.gif)](https://gyazo.com/e619cbe9ee6b363146248880ad385b36)
@@ -70,12 +79,16 @@ https://nicecosme.herokuapp.com/
 
 ## 記事編集機能
 [![Image from Gyazo](https://i.gyazo.com/c8a9df4c23798b644d668c8537d8371a.gif)](https://gyazo.com/c8a9df4c23798b644d668c8537d8371a)
+投稿した記事を編集することができます。
 
 ## 記事削除機能
 [![Image from Gyazo](https://i.gyazo.com/a68add4e712405d413f0f6e0225feb41.gif)](https://gyazo.com/a68add4e712405d413f0f6e0225feb41)
+投稿した記事を削除することができます。
 
 ## コメント機能
 [![Image from Gyazo](https://i.gyazo.com/18cbfbd40249095bb5933ac474f3d113.gif)](https://gyazo.com/18cbfbd40249095bb5933ac474f3d113)
+記事にコメントすることができます。<br>
+コメントが投稿されるとコメント一覧に投稿したコメントが表示されます。
 
 ## カテゴリー別一覧表示機能
 [![Image from Gyazo](https://i.gyazo.com/6606e93c86ef3a7f37b2cfb0845eddc8.gif)](https://gyazo.com/6606e93c86ef3a7f37b2cfb0845eddc8)
@@ -98,16 +111,17 @@ https://nicecosme.herokuapp.com/
 ## ユーザー詳細表示機能
 [![Image from Gyazo](https://i.gyazo.com/98529f925a15e51e8bc86c910b5bead4.gif)](https://gyazo.com/98529f925a15e51e8bc86c910b5bead4)
 [![Image from Gyazo](https://i.gyazo.com/31d290ec1ce79dda0281238a7e2ba0d8.gif)](https://gyazo.com/31d290ec1ce79dda0281238a7e2ba0d8)
-ヘッダーのマイページまたは投稿詳細ページのユーザー名をクリックするとユーザー詳細ページに遷移します。
+ヘッダーのユーザー名をクリックし、マイページを選択すると自分のユーザー詳細ページに遷移します。
+投稿詳細ページのユーザー名をクリックすることでほかのユーザーの情報を閲覧することも可能です。
 
 ## フォロー機能、フォロー・フォロワー一覧表示機能
 [![Image from Gyazo](https://i.gyazo.com/f862cea71db0289c07bcbad795cae7a7.gif)](https://gyazo.com/f862cea71db0289c07bcbad795cae7a7)
-ユーザーのフォローやフォロー解除をすることができます。<br>
+ユーザー詳細ページから閲覧中のユーザーをフォローしたりフォローの解除をすることができます。<br>
 フォロー・フォロワー一覧を閲覧することも可能です。
 
 ## タブメニュー
 [![Image from Gyazo](https://i.gyazo.com/1e44b312e60bded99fd49233288ebb95.gif)](https://gyazo.com/1e44b312e60bded99fd49233288ebb95)
-タブをクリックすることで投稿した記事一覧、いいねした記事一覧の表示を切り替えることができます。
+タブをクリックすることでユーザーが投稿した記事一覧、いいねした記事一覧の表示を切り替えることができます。
 
 ## ユーザー編集機能
 [![Image from Gyazo](https://i.gyazo.com/898d8d25e86a3aef5b1249488188f27c.gif)](https://gyazo.com/898d8d25e86a3aef5b1249488188f27c)
@@ -116,20 +130,20 @@ https://nicecosme.herokuapp.com/
 
 ## エラーメッセージの日本語対応
 [![Image from Gyazo](https://i.gyazo.com/5ae30dafd370218aece7550dc2990769.gif)](https://gyazo.com/5ae30dafd370218aece7550dc2990769)
-登録や投稿に失敗した場合のエラーメッセージが日本語で表示されます。
+新規登録、ログイン、投稿、コメントに失敗した場合のエラーメッセージが日本語で表示されます。
 
 ## ページネーション機能
 [![Image from Gyazo](https://i.gyazo.com/eb6898c6e8645248f522a4ee69e92d3e.gif)](https://gyazo.com/eb6898c6e8645248f522a4ee69e92d3e)
 記事が１０件以上になると、11件目以降が次のページに表示されるようになります。
 
 ## レスポンシブ対応
-[![Image from Gyazo](https://i.gyazo.com/750696e2aa838d363d71d56a992d2f38.png)](https://gyazo.com/750696e2aa838d363d71d56a992d2f38)
-[![Image from Gyazo](https://i.gyazo.com/67dee2b43826b1ba1d20f78782417546.png)](https://gyazo.com/67dee2b43826b1ba1d20f78782417546)
+[![Image from Gyazo](https://i.gyazo.com/750696e2aa838d363d71d56a992d2f38.png)](https://gyazo.com/750696e2aa838d363d71d56a992d2f38)<br>
+[![Image from Gyazo](https://i.gyazo.com/67dee2b43826b1ba1d20f78782417546.png)](https://gyazo.com/67dee2b43826b1ba1d20f78782417546)<br>
 スマホ表示とタブレット表示に対応しています。
 
 ## ハンバーガーメニュー
-[![Image from Gyazo](https://i.gyazo.com/894d7425fe7ee4a9836b292307c3826f.gif)](https://gyazo.com/894d7425fe7ee4a9836b292307c3826f)
-右上のボタンをクリックすると隠れていたメニューが表示されます。
+[![Image from Gyazo](https://i.gyazo.com/894d7425fe7ee4a9836b292307c3826f.gif)](https://gyazo.com/894d7425fe7ee4a9836b292307c3826f)<br>
+右上のボタンをクリックすると隠れていたメニューが表示されます。<br>
 スマホ表示時に対応しています。
 
 # 使用技術(開発環境)
