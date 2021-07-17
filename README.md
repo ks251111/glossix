@@ -124,7 +124,7 @@ niceCOSMEのトップページです。<br>
 タブをクリックすることでユーザーが投稿した記事一覧、いいねした記事一覧の表示を切り替えることができます。
 
 ## ユーザー編集機能
-[![Image from Gyazo](https://i.gyazo.com/898d8d25e86a3aef5b1249488188f27c.gif)](https://gyazo.com/898d8d25e86a3aef5b1249488188f27c)
+[![Image from Gyazo](https://i.gyazo.com/5dddf4a36dab11fe1e3bbe1ebefae401.gif)](https://gyazo.com/5dddf4a36dab11fe1e3bbe1ebefae401)
 ヘッダーの「登録情報の編集」のリンクをクリックするとユーザーの編集画面に遷移します。<br>
 パスワードは変更したい時のみ入力し、変更する必要がない場合はスキップできる仕様になっています。
 
