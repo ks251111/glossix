@@ -989,8 +989,20 @@ a {
   }
 
   /* ユーザー詳細ページ */
+  .profile {
+    margin: 0;
+  }
+
   .tab {
-    margin-top: 10%;
+    margin: 10% 0 0 0;
+  }
+
+  #user-article {
+    margin: 0;
+  }
+
+  #user-like {
+    margin: 0;
   }
 
   /* フォロー・フォロワー一覧 */
@@ -1032,5 +1044,11 @@ a {
   /* コメント一覧 */
   .comment-mdl-list {
     width: 240px;
+  }
+
+  /* ユーザー詳細ページ */
+  .user-image {
+    height: 150px;
+    width: 150px;
   }
 }
