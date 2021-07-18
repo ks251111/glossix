@@ -1028,4 +1028,9 @@ a {
   .comment-form .form-long-text {
     width: 240px;
   }
+
+  /* コメント一覧 */
+  .comment-mdl-list {
+    width: 240px;
+  }
 }
