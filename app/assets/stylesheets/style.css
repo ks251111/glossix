@@ -999,3 +999,33 @@ a {
   }
 }
 
+@media screen and (max-width:280px) {
+  /* フォーム */
+  .form-area {
+    width: 100%;
+  }
+
+  #user_image {
+    font-size: 10px;
+  }
+
+  #article_image {
+    font-size: 10px;
+  }
+
+  .form-text {
+    width: 200px;
+  }
+
+  .form-title-text {
+    width: 200px;
+  }
+
+  .form-long-text {
+    width: 200px;
+  }
+
+  .comment-form .form-long-text {
+    width: 240px;
+  }
+}
