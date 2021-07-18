@@ -994,7 +994,15 @@ a {
   }
 
   .tab {
-    margin-top: 10%;
+    margin: 10% 0 0 0;
+  }
+
+  #user-article {
+    margin: 0;
+  }
+
+  #user-like {
+    margin: 0;
   }
 
   /* フォロー・フォロワー一覧 */
