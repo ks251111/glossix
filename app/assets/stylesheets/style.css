@@ -989,6 +989,10 @@ a {
   }
 
   /* ユーザー詳細ページ */
+  .profile {
+    margin: 0;
+  }
+
   .tab {
     margin-top: 10%;
   }
