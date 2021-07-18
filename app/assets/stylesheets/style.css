@@ -1045,4 +1045,10 @@ a {
   .comment-mdl-list {
     width: 240px;
   }
+
+  /* ユーザー詳細ページ */
+  .user-image {
+    height: 150px;
+    width: 150px;
+  }
 }
