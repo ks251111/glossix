@@ -17,6 +17,7 @@ class LikesController < ApplicationController
   end
 
   private
+  
   def like_params
     params.permit(:article_id)
   end

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   has_many :articles
   has_many :comments
   has_many :likes
@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :user
   has_one_attached :image
-  
+
   validates :nickname, presence: true
 
   VALID_PASSWORD_REGIX = /\A[a-z0-9]+\z/i
@@ -22,7 +22,6 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGIX }, on: :update, allow_blank: :true
 
   def update_without_current_password(params, *options)
-    
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
       params.delete(:password_confirmation)

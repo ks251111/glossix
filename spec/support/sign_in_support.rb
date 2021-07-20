@@ -5,5 +5,5 @@ module SignInSupport
     fill_in 'パスワード', with: user.password
     click_button "ログイン"
     expect(current_path).to eq(root_path)
-  end  
+  end
 end
