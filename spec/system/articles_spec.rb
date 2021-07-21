@@ -32,9 +32,9 @@ RSpec.describe "記事投稿", type: :system do
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容の記事が存在することを確認する(画像)
       expect(page).to have_selector('img')
-      # トップページには先ほど投稿した内容の記事が存在することを確認する
+      # トップページには先ほど投稿した内容の記事が存在することを確認する(タイトル)
       expect(page).to have_content(@article_title)
-      # トップページには先ほど投稿した内容の記事が存在することを確認する
+      # トップページには先ほど投稿した内容の記事が存在することを確認する(テキスト)
       expect(page).to have_content(@article_text)
     end
   end
