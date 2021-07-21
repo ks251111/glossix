@@ -125,8 +125,8 @@ RSpec.describe 'ユーザー情報編集', type: :system do
       fill_in 'パスワード（確認用）', with: '111111'
       # 「変更する」ボタンを押す
       click_button '変更する'
-      # ユーザー詳細ページに遷移したことを確認する
-      expect(current_path).to eq(user_path(@user))
+      # トップページに遷移したことを確認する
+      expect(current_path).to eq(root_path)
       # 編集した内容が反映されていることを確認する(ニックネーム)
       expect(page).to have_content('テスト')
       # 編集した内容が反映されていることを確認する(画像)
