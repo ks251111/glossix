@@ -19,7 +19,7 @@ describe ArticlesController, type: :request do
     end
     it 'indexアクションにリクエストするとレスポンスに投稿済みの記事の本文が存在する' do
       get root_path
-      expect(responce.body).to include(@article.text)
+      expect(response.body).to include(@article.text)
     end
     it 'indexアクションにリクエストするとレスポンスに投稿済みの記事の投稿者名が存在する' do
       get root_path
@@ -27,7 +27,7 @@ describe ArticlesController, type: :request do
     end
     it 'indexアクションにリクエストするとレスポンスにいいね数が存在する' do
       get root_path
-      expect(response.body).to include(@article.likes.count)
+      expect(response.body).to include(@article.likes.count.to_s)
     end
   end
 
