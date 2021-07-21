@@ -32,10 +32,10 @@ RSpec.describe "記事投稿", type: :system do
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容の記事が存在することを確認する(画像)
       expect(page).to have_selector('img')
-      # トップページには先ほど投稿した内容の記事が存在することを確認する(16文字以内のタイトル)
-      expect(page).to have_content(@article_title.truncate(16))
-      # トップページには先ほど投稿した内容の記事が存在することを確認する(19文字以内のテキスト)
-      expect(page).to have_content(@article_text.truncate(19))
+      # トップページには先ほど投稿した内容の記事が存在することを確認する
+      expect(page).to have_content(@article_title)
+      # トップページには先ほど投稿した内容の記事が存在することを確認する
+      expect(page).to have_content(@article_text)
     end
   end
 
@@ -44,7 +44,7 @@ RSpec.describe "記事投稿", type: :system do
       # トップページに遷移する
       visit root_path
       # 新規投稿ページのボタンを押す
-      click_on ('記事を投稿する')
+      click_on('記事を投稿する')
       # ログインページへ遷移したことを確認する
       expect(current_path).to eq(new_user_session_path)
     end
@@ -63,13 +63,12 @@ RSpec.describe '投稿詳細', type: :system do
     visit article_path(@article)
     # 詳細ページに記事の内容が含まれている
     expect(page).to have_selector('img')
-    expect(page).to have_content("#{@article.title}")
-    expect(page).to have_content("#{@article.text}")
-    expect(page).to have_content("#{@article.category.name}")
+    expect(page).to have_content(@article.title)
+    expect(page).to have_content(@article.text)
+    expect(page).to have_content(@article.category.name)
     expect(page).to have_selector("div.favorite")
     # コメント用のフォームが存在する
     expect(page).to have_selector 'form'
-
   end
 
   it 'ログインしていない状態で記事詳細ページに遷移できるもののコメント投稿欄が表示されない' do
@@ -79,9 +78,9 @@ RSpec.describe '投稿詳細', type: :system do
     visit article_path(@article)
     # 詳細ページに記事の内容が含まれている
     expect(page).to have_selector('img')
-    expect(page).to have_content("#{@article.title}")
-    expect(page).to have_content("#{@article.text}")
-    expect(page).to have_content("#{@article.category.name}")
+    expect(page).to have_content(@article.title)
+    expect(page).to have_content(@article.text)
+    expect(page).to have_content(@article.category.name)
     expect(page).to have_selector("div.favorite")
     # 「コメントの投稿には新規登録/ログインが必要です」が表示されていることを確認する
     expect(page).to have_content 'コメントの投稿には新規登録/ログインが必要です'
@@ -100,7 +99,9 @@ RSpec.describe '記事編集', type: :system do
       sign_in(@article1.user)
       # article1の詳細ページへ遷移する
       visit article_path(@article1)
-      # article1に「編集」へのリンクがあることを確認する
+      # 「･･･」のボタンをクリックする
+      find('#dropdown').click
+      # 「編集」へのリンクがあることを確認する
       expect(page).to have_link '編集', href: edit_article_path(@article1)
       # 編集ページへ遷移する
       visit edit_article_path(@article1)
@@ -113,7 +114,7 @@ RSpec.describe '記事編集', type: :system do
       ).to eq(@article1.text)
       expect(
         find('#article_category_id').value
-      ).to eq "#{@article1.category_id}"
+      ).to eq(@article1.category_id.to_s)
       # 投稿内容を編集する
       fill_in 'article_title', with: "#{@article1.title}+編集したタイトル"
       fill_in 'article_text', with: "#{@article1.text}+編集したテキスト"
@@ -135,7 +136,7 @@ RSpec.describe '記事編集', type: :system do
       # 詳細ページには先ほど変更した内容の記事が存在することを確認する(テキスト)
       expect(page).to have_content("#{@article1.text}+編集したテキスト")
       # 詳細ページには先ほど変更した内容の記事が存在することを確認する(カテゴリー)
-      expect(page).to have_content("#{@article1.category_id}")
+      expect(page).to have_content(@article1.category_id)
     end
   end
 
@@ -145,22 +146,22 @@ RSpec.describe '記事編集', type: :system do
       sign_in(@article1.user)
       # article2の詳細ページへ遷移する
       visit article_path(@article2)
-      # article2に「編集」へのリンクがないことを確認する
-      expect(page).to have_no_link '編集', href: edit_article_path(@article2)
+      # article2の詳細ページに「･･･」のボタンがないことを確認する
+      expect(page).to have_no_selector('#dropdown')
     end
     it 'ログインしていないと記事の編集画面には遷移できない' do
       # トップページにいる
       visit root_path
       # article1の詳細ページへ遷移する
       visit article_path(@article1)
-      # article1の詳細ページに「編集」へのリンクがないことを確認する
-      expect(page).to have_no_link '編集', href: edit_article_path(@article1)
+      # article1の詳細ページに「･･･」のボタンがないことを確認する
+      expect(page).to have_no_selector('#dropdown')
       # トップページへ遷移する
       visit root_path
       # article2の詳細ページへ遷移する
       visit article_path(@article2)
-      # article2の詳細ページに「編集」へのリンクがないことを確認する
-      expect(page).to have_no_link '編集', href: edit_article_path(@article2)
+      # article2の詳細ページに「･･･」のボタンがないことを確認する
+      expect(page).to have_no_selector('#dropdown')
     end
   end
 end
@@ -174,10 +175,12 @@ RSpec.describe '記事削除', type: :system do
   context '記事削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿した記事の削除ができる' do
       # article1を投稿したユーザーでログインする
-      sign_in(@article1.user)    
+      sign_in(@article1.user)
       # article1の詳細ページへ遷移する
       visit article_path(@article1)
-      # article1の詳細ページに「削除」へのリンクがあることを確認する
+      # 「･･･」のボタンをクリックする
+      find('#dropdown').click
+      # 「削除」へのリンクがあることを確認する
       expect(page).to have_link '削除', href: article_path(@article1)
       # 投稿を削除するとレコードの数が1減ることを確認する
       expect {
@@ -186,7 +189,7 @@ RSpec.describe '記事削除', type: :system do
       # トップページに遷移したことを確認する
       expect(current_path).to eq(root_path)
       # トップページにはarticle1の内容が存在しないことを確認する(タイトル)
-      expect(page).to have_no_content("#{@article1.title}")
+      expect(page).to have_no_content(@article1.title)
     end
   end
 
@@ -196,22 +199,22 @@ RSpec.describe '記事削除', type: :system do
       sign_in(@article1.user)
       # article2の詳細ページへ遷移する
       visit article_path(@article2)
-      # article2の詳細ページに「削除」へのリンクがないことを確認する
-      expect(page).to have_no_link '削除', href: article_path(@article2)
+      # article2の詳細ページに「･･･」のボタンがないことを確認する
+      expect(page).to have_no_selector('#dropdown')
     end
     it 'ログインしていないと記事の削除ボタンが表示されない' do
       # トップページに移動する
       visit root_path
       # article1の詳細ページへ遷移する
       visit article_path(@article1)
-      # article1の詳細ページに「削除」へのリンクがないことを確認する
-      expect(page).to have_no_link '削除', href: article_path(@article1)
+      # article1の詳細ページに「･･･」のボタンがないことを確認する
+      expect(page).to have_no_selector('#dropdown')
       # トップページに移動する
       visit root_path
       # article2の詳細ページへ遷移する
       visit article_path(@article2)
-      # article2の詳細ページに「削除」へのリンクがないことを確認する
-      expect(page).to have_no_link '削除', href: article_path(@article2)
+      # article2の詳細ページに「･･･」のボタンがないことを確認する
+      expect(page).to have_no_selector('#dropdown')
     end
   end
 end
