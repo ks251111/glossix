@@ -949,6 +949,7 @@ a {
   .article-show-mdl-contents {
     width: 335px;
   }
+
   .slider img {
     margin: 0 10px;
   }
@@ -1011,7 +1012,12 @@ a {
   }
 }
 
-@media screen and (max-width:280px) {
+@media screen and (max-width:320px) {
+  /* 記事詳細ページ */
+  .article-show-mdl-contents {
+    width: 240px;
+  }
+  
   /* フォーム */
   .form-area {
     width: 100%;
