@@ -1056,4 +1056,9 @@ a {
     height: 150px;
     width: 150px;
   }
+
+  /* Q&A詳細ページ */
+  .talk-show-contents {
+    width: 240px;
+  }
 }
