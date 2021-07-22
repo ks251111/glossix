@@ -787,8 +787,6 @@ a {
 
   .article-img {
     margin: 0;
-    height: 200px;
-    width: 200px;
   }
 
   .article-info {
@@ -823,6 +821,11 @@ a {
 
 /* スマホ表示 */
 @media screen and (max-width:600px) {
+  .images {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+  }
 
   /* ヘッダー */
   .header {
@@ -949,6 +952,7 @@ a {
   .article-show-mdl-contents {
     width: 335px;
   }
+
   .slider img {
     margin: 0 10px;
   }
@@ -1011,12 +1015,13 @@ a {
   }
 }
 
-@media screen and (max-width:280px) {
-  /* フォーム */
-  .form-area {
-    width: 100%;
+@media screen and (max-width:320px) {
+  /* 記事詳細ページ */
+  .article-show-mdl-contents {
+    width: 240px;
   }
 
+  /* フォーム */
   #user_image {
     font-size: 10px;
   }
@@ -1050,5 +1055,10 @@ a {
   .user-image {
     height: 150px;
     width: 150px;
+  }
+
+  /* Q&A詳細ページ */
+  .talk-show-contents {
+    width: 240px;
   }
 }
