@@ -9,10 +9,11 @@
       <% end %>
     </div>
 
+    <%# フォロー機能 %>
     <div id="relationship_<%= @user.id %>">
       <%= render partial: "relationships/relationship", locals: { user: @user } %>
     </div>
-
+    <%# /フォロー機能 %>
   </div>
 
   <ul class="tab">
@@ -20,6 +21,7 @@
     <li><%= link_to "いいね", "#user-like" %></li>
   </ul>
 
+  <%# 投稿記事一覧 %>
   <div id="user-article" class="area is-active">
     <h2 class="title"><%= @user.nickname %>さんの記事一覧</h2>
     <div class="article-contents">
@@ -28,7 +30,9 @@
       <% end %>
     </div>
   </div>
+  <%#/ 投稿記事一覧 %>
 
+  <%# いいねした記事一覧 %>
   <div id="user-like" class="area">
     <h2 class="title"><%= @user.nickname %>さんのいいねした記事一覧</h2>
     <div class="article-contents">
@@ -74,6 +78,7 @@
       <% end %>
     </div>
   </div>
+  <%# /いいねした記事一覧 %>
 </div>
 
 <% breadcrumb :show_user, @user %>
