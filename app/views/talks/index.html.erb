@@ -9,6 +9,7 @@
 
   <h2 class="title">質問一覧</h2>
   
+  <%# Q＆A一覧 %>
   <div class="talk-lists">
     <div class="talk-list">
     <% @talks.each do |talk| %>
@@ -38,6 +39,8 @@
     <% end %>
     </div>
   </div>
+  <%# /Q＆A一覧 %>
+  
   <%= paginate @talks %>
 </div>
 
